@@ -92,23 +92,13 @@ export default function HomeComponent() {
         <IntroHeadline>
           <VarHeading size="xxlarge">Welcome</VarHeading>
           <p>
-            The U.S. Greenhouse Gas Center opens up access to trusted data on
-            greenhouse gases. This&nbsp;multi-agency effort consolidates
-            greenhouse gas information from observations and models.
-            The&nbsp;goal of the US GHG Center is providing decision-makers with
-            one stop for data and analysis.
-          </p>
-          <p>
-          This initial two-year demonstration phase creates a way to explore 
-          and analyze U.S. government and other datasets, targeting three 
-          greenhouse gas areas of study, as shown below. The US GHG Center 
-          also encourages stakeholder feedback and ideas for future expansion.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae tortor commodo lorem sodales rhoncus. Pellentesque eu elit hendrerit, tempus lectus vitae, sagittis ligula. Nullam ac massa et urna pulvinar varius vel id est. Suspendisse pharetra, odio ac finibus fringilla, mi urna porttitor sem, sed efficitur lectus enim sodales felis. Proin sapien nibh, euismod ac nulla at, blandit facilisis elit.
           </p>
           <ArrowLink to="/stories/intro-us-ghg-center">
-            Introduction to the US GHG Center
+            Introduction to EIC
           </ArrowLink>
         </IntroHeadline>
-        <Keypoints />
+        {/* <Keypoints /> */}
         <ActionsBlock>
           <Button
             forwardedAs={NavLink}
@@ -127,8 +117,7 @@ export default function HomeComponent() {
               Joining forces for a better future
             </VarHeading>
             <p>
-              The US GHG Center is grateful for the support and expertise of our
-              valued, multi-agency collaborators: EPA, NASA, NIST, and NOAA.
+            Praesent pellentesque, tellus eget lobortis iaculis, mauris ante euismod quam, sit amet dignissim lorem est ac mauris. Etiam euismod fringilla laoreet. Nam quam erat, pellentesque non iaculis vel, dignissim ac tellus. Nam urna tortor, blandit vitae arcu sed, vestibulum ultrices urna.
             </p>
           </InfoCalloutHeadline>
           <Partners variation="positive" size="big" />

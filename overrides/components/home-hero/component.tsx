@@ -75,10 +75,9 @@ export default function HomeHero(props) {
       <Constrainer>
         <PageHeroHGroup>
           <HeroHeadline>
-            <VarHeading size="jumbo">U.S. Greenhouse Gas Center</VarHeading>
+            <VarHeading size="jumbo">{process.env.APP_TITLE}</VarHeading>
             <p>
-              Uniting Data and Technology to Empower Tomorrow's Climate
-              Solutions
+              Placeholder text
             </p>
           </HeroHeadline>
           <Partners variation="negative" size="big" />

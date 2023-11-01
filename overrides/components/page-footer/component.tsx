@@ -291,7 +291,7 @@ export default function PageFooter(props) {
         <FooterContacts>
           <div>
             <a href="/">
-              <span>By</span> <strong>US GHG Center</strong> <span>on</span>{" "}
+              <span>By</span> <strong>{process.env.APP_TITLE}</strong> <span>on</span>{" "}
               <time dateTime={String(nowDate.getFullYear())}>
                 {nowDate.getFullYear()}
               </time>
@@ -311,13 +311,13 @@ export default function PageFooter(props) {
               <Partners variation="positive" size="small" />
             </TintBox>
             <p>
-              U.S. Greenhouse Gas Center Responsible Official:{" "}
+              {process.env.APP_TITLE} Responsible Official:{" "}
               <a
-                href="https://appliedsciences.nasa.gov/about/our-team/argyro-kavvada"
+                href=""
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <strong>Argyro Kavvada</strong>
+                <strong>Pleaceholder</strong>
               </a>
             </p>
           </CreditsInfo>

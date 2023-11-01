@@ -66,12 +66,9 @@ export default function HeaderComponent() {
     <Brand>
       <Link to="/">
         <Logo>
-          <span>U.S.</span>
-          <span>GHG</span>
-          <span>Center</span>
+          <span>LOGO</span>
         </Logo>
       </Link>
-      <VersionInfoLink to='/development'>Beta</VersionInfoLink>
     </Brand>
   );
 }

@@ -1,4 +1,4 @@
-# Welcome to the GHG dashboard
+# Welcome to the EIC dashboard
 
 This dashboard is organized around datasets and stories.
 A Dataset represents a piece of geo-referenced data displayed as a set of related layers on a map.  
