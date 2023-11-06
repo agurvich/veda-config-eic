@@ -22,6 +22,9 @@ module.exports = {
     // Type: Content override
     developmentContent: "./overrides/development/index.mdx",
 
+    storiesHubContent: "./overrides/theme/index.mdx",
+    
+    
     // Component for the home hero banner.
     homeHero: "./overrides/components/home-hero/index.mdx",
 
@@ -33,11 +36,11 @@ module.exports = {
 
   strings: {
     stories: {
-      one: "Data Insights",
-      other: "Data Insights",
+      one: "Theme",
+      other: "Themes",
     },
     storiesBanner:
-        "Explore the guided narratives below to learn more about greenhouse gas measurement, changes over time, events and human-related causes and contributions.",
+        "Something related to themes.",
     dataCatalogBanner:
         "This dashboard is for exploring key datasets that provide insight into greenhouse gas sources, sinks, emissions, fluxes, and events.",
   },
