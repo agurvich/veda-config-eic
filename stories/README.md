@@ -37,4 +37,6 @@ Type can take the following values:
 1. `ALL` - all audiences
 1. `K12` - K12
 
-any assets live in a corresponding `<>.<>(.<>)` sub-directory
+any assets live in a corresponding `./<>.<>(.<>)` sub-directory
+
+**UNLESS** that .mdx is for an external link and the only asset is its header, in which case it should live in `./external_headers`.
