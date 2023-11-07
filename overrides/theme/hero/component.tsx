@@ -2,7 +2,6 @@ import React from "$veda-ui/react";
 import PageHero from "$veda-ui-scripts/components/common/page-hero";
 
 export default function Hero() {
-  console.log("hero");
   return (
     <PageHero
       title="Nine thematic areas, one earth"
