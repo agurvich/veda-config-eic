@@ -3,7 +3,7 @@
 
 ## Filenaming conventions 
 
-<type>.<sub-type>(.<optional-long-title>).mdx
+{type}.{sub-type}(.{optional-long-title}).mdx
 
 Type can take the following values: 
 * theme 
