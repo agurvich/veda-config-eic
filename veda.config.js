@@ -29,6 +29,8 @@ module.exports = {
     headerBrand: "./overrides/components/header-brand/index.mdx",
     // Component for the footer.
     pageFooter: "./overrides/components/page-footer/index.mdx",
+    "/visit": "./custom-pages/visit/index.mdx",
+    "/teach": "./custom-pages/teach/index.mdx",
   },
 
   strings: {
@@ -37,19 +39,19 @@ module.exports = {
       other: "Data Insights",
     },
     storiesBanner:
-        "Explore the guided narratives below to learn more about greenhouse gas measurement, changes over time, events and human-related causes and contributions.",
+      "Explore the guided narratives below to learn more about greenhouse gas measurement, changes over time, events and human-related causes and contributions.",
     dataCatalogBanner:
-        "This dashboard is for exploring key datasets that provide insight into greenhouse gas sources, sinks, emissions, fluxes, and events.",
+      "This dashboard is for exploring key datasets that provide insight into greenhouse gas sources, sinks, emissions, fluxes, and events.",
   },
 
   theme: {
     color: {
       primary: "#082a64",
-      link: '#1565EF'
+      link: "#1565EF",
     },
     type: {
       base: {
-        color: '#1B2631',
+        color: "#1B2631",
         family: '"Inter", sans-serif',
       },
     },
