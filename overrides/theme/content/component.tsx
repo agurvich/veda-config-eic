@@ -33,7 +33,7 @@ export default function ThemeLandingPage() {
             <li>
               <Card
                 linkLabel="View more"
-                linkTo={`/${getString('stories').other}/${t.id}`}
+                linkTo={`/stories/${t.id}`}
                 title={t.name}
                 description={t.description}
                 imgSrc={t.media.src}
