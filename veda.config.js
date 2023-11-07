@@ -21,10 +21,8 @@ module.exports = {
     // Content for the development page.
     // Type: Content override
     developmentContent: "./overrides/development/index.mdx",
-
-    storiesHubContent: "./overrides/theme/index.mdx",
-    
-    
+    storiesHubContent: "./overrides/theme/content/index.mdx",
+    storiesHubHero: "./overrides/theme/hero/index.mdx",
     // Component for the home hero banner.
     homeHero: "./overrides/components/home-hero/index.mdx",
 
@@ -36,23 +34,22 @@ module.exports = {
 
   strings: {
     stories: {
-      one: "Theme",
-      other: "Themes",
+      one: "theme",
+      other: "themes",
     },
-    storiesBanner:
-        "Something related to themes.",
+    storiesBanner: "Something related to themes.",
     dataCatalogBanner:
-        "This dashboard is for exploring key datasets that provide insight into greenhouse gas sources, sinks, emissions, fluxes, and events.",
+      "This dashboard is for exploring key datasets that provide insight into greenhouse gas sources, sinks, emissions, fluxes, and events.",
   },
 
   theme: {
     color: {
       primary: "#082a64",
-      link: '#1565EF'
+      link: "#1565EF",
     },
     type: {
       base: {
-        color: '#1B2631',
+        color: "#1B2631",
         family: '"Inter", sans-serif',
       },
     },
