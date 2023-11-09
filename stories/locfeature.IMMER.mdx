@@ -1,0 +1,27 @@
+---
+featuredOn:
+  - immersive_earth
+id: "immersive_earth"
+name: Space for Earth
+theme: true
+description: "Space for Earth invites viewers to experience Earth as can only be seen from space — as an interconnected world, lacking boundaries or limits. This immersive audio-visual installation invites visitors to explore Earth’s changing vital signs. Observe, interact with, and become part of the data different federal agencies use to understand our changing planet. 
+Narrated by: Astronauts Nicole Stott and Andrew Feustel"
+
+
+media:
+  src: ::file ./locfeature.IMMER/immersive_earth.jpeg
+  alt: Photographic imagery of a hurricane taken from the International Space Station
+  author:
+    name: ""
+    url: ""
+pubDate: 2023-10-18
+taxonomy:
+  - name: Location Features
+    values:
+      - Space for Earth
+---
+
+import Carousel from './components/carousel.jsx';
+import contentArray from './locfeature.IMMER/carousel_content.json';
+
+<Carousel {...{contentArray}} />
