@@ -1,12 +1,12 @@
 ---
 featuredOn:
   - "air quality"
-id: "air-quality"
-name: "Air Quality"
+id: "introduction_air_quality"
+name: "Introduction to Air Quality"
 theme: true
 description: " The quality of the air you breathe every day has a big impact on your health. NASA observations from space help fill in the gaps between air quality monitors on the ground, helping us see where air pollution is improving and where there is more work to be done.  "
 media:
-  src: ::file ./theme.AQ_/connected_earth_air_quality.jpg
+  src: ::file ./external_headers/connected_earth_air_quality.jpg
   alt: Satellite imagery of geometrically shaped crop fields
   author:
     name: ""
@@ -19,7 +19,7 @@ taxonomy:
 ---
 
 import Carousel from './components/carousel.jsx';
-import contentArray from './theme.AQ_/carousel_content.json';
+import contentArray from './theme.AQ_.introduction_air_quality/carousel_content.json';
 
 
 <Block type="wide">
@@ -57,7 +57,7 @@ import contentArray from './theme.AQ_/carousel_content.json';
     <Image
       height="200"
       width="200 !important"
-      src={new URL('./theme.AQ_/air_quality_ozone_hole_200x200.png', import.meta.url).href}
+      src={new URL('./theme.AQ_.introduction_air_quality/air_quality_ozone_hole_200x200.png', import.meta.url).href}
       alt='rainbow colormap image of the hole in the ozone layer above the arctic.'
     />
     <Caption>
@@ -78,7 +78,7 @@ import contentArray from './theme.AQ_/carousel_content.json';
   </Prose>
   <Figure>
     <Image
-      src={new URL('./theme.AQ_/air_quality_story_map.png', import.meta.url).href}
+      src={new URL('./theme.AQ_.introduction_air_quality/air_quality_story_map.png', import.meta.url).href}
       alt='world map of air quality in blue-yellow colormap'
     />
   </Figure>
