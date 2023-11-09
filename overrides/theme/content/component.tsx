@@ -20,9 +20,21 @@ const CardWrppaer = styled(Hug)`
   }
 `;
 
+const themeLandingPageIds = [
+  "air-quality",
+  "agriculture",
+  "biodiversity",
+  "disasters",
+  "energy",
+  "greenhouse_gases",
+  "sea_level_rise",
+  "wildfires",
+  "water_resources",
+];
+
 const themeData = Object.keys(stories)
   .map((key) => stories[key].data)
-  .filter((story) => story.theme);
+  .filter((story) => themeLandingPageIds.includes(story.id));
 
 export default function ThemeLandingPage() {
   return (
