@@ -66,13 +66,12 @@ function Thumbnails({contentArray,index,setIndex}){
     let subArray = contentArray.slice(index,index+4)
 
     // handle when the thumbnails should wrap back around to the beginning
-    if ( contentArray.length >= 4 && subArray.length < 4 ){
-        subArray = [...subArray, ...contentArray.slice(0,4-subArray.length)];
+    if ( subArray.length < Math.min(4,contentArray.length) ){
+        subArray = [...subArray, ...contentArray.slice(0,Math.min(4,contentArray.length)-subArray.length)];
     }
 
     return <>
 
-        {/*/ create the actual thumbnail divs that set the index on click /*/}
         <div
         style={{
             display:'flex',
@@ -81,6 +80,7 @@ function Thumbnails({contentArray,index,setIndex}){
         }}
         >
 
+        {/*/ create the actual thumbnail divs that set the index on click /*/}
         {subArray.map((content,mapIndex) => {
             const key = `carousel-${content.src.slice(content.src.length-6)}`
             const parts = content.src.split('/');
