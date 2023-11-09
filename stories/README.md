@@ -24,7 +24,7 @@ Type can take the following values:
 
 ### location sub-types
 1. `HEAD` - NASA Headquarters
-1. `SINH` - Smithsonian Institution National Museum of Natural History
+1. `NMNH` - Smithsonian Institution National Museum of Natural History
 1. `KSC_` - NASA Kennedy Space Flight Center
 
 ### locfeature sub-types
