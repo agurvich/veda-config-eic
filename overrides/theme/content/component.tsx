@@ -8,7 +8,7 @@ import {
   CardList,
   CardFooter,
 } from "$veda-ui-scripts/components/common/card";
-
+import ThemeCards from '../../components/ThemeCard';
 import { Fold } from "$veda-ui-scripts/components/common/fold";
 
 const CardWrppaer = styled(Hug)`
@@ -27,23 +27,7 @@ const themeData = Object.keys(stories)
 export default function ThemeLandingPage() {
   return (
     <Fold>
-      <CardWrppaer>
-        <CardList>
-          {themeData.map((t) => (
-            <li>
-              <Card
-                linkLabel="View more"
-                linkTo={`/stories/${t.id}`}
-                title={t.name}
-                description={t.description}
-                imgSrc={t.media.src}
-                imgAlt={t.media.alt}
-                footerContent={<div>Footer</div>}
-              />
-            </li>
-          ))}
-        </CardList>
-      </CardWrppaer>
+      <ThemeCards storyIds={themeLandingPageIds} />
     </Fold>
   );
 }
