@@ -1,13 +1,17 @@
 import React from "$veda-ui/react";
 import styled, {css} from "$veda-ui/styled-components";
 import { Link } from "$veda-ui/react-router-dom";
-import { media, themeVal, glsp } from "$veda-ui/@devseed-ui/theme-provider";
+import { themeVal, glsp } from "$veda-ui/@devseed-ui/theme-provider";
 import { stories } from "veda";
 import Hug from "$veda-ui-scripts/styles/hug";
 import {
   CardList
 } from "$veda-ui-scripts/components/common/card";
 import { focusStyle } from "../common/style";
+
+export interface ContentsPropType {
+  storyIds: string[];
+}
 
 const CardWrapper = styled(Hug)`
   padding: ${glsp(1, 0)};
@@ -45,7 +49,7 @@ const PrimaryColorH3 = styled.h2`
   margin: ${glsp(1.5)} 0;
 `
 
-export default function ThemeCards({storyIds}) {
+export default function ThemeCards({storyIds}: ContentsPropType) {
 
   const relatedData = Object.keys(stories)
   .map((key) => stories[key].data)

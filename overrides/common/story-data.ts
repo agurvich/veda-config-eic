@@ -10,13 +10,25 @@ export const themeLandingPageIds = [
   "water_resources",
 ];
 
-export const toolsStoryIds = [
+export const teachToolsStoryIds = [
   "globe_protocol_etraining",
   "stem_resources",
   "climate_kids",
 ];
 
-export const k12StoryIds = [
+export const teachK12StoryIds = [
+  "globe_protocol_etraining",
+  "stem_resources",
+  "climate_kids",
+];
+
+export const visitLocationStoryIds = [
+  "globe_protocol_etraining",
+  "stem_resources",
+  "climate_kids",
+];
+
+export const visitLocationFeaturesStoryIds = [
   "globe_protocol_etraining",
   "stem_resources",
   "climate_kids",

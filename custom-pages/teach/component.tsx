@@ -2,9 +2,12 @@ import React from "$veda-ui/react";
 import styled from "$veda-ui/styled-components";
 import { Fold, FoldBody } from "$veda-ui-scripts/components/common/fold";
 import RelatedContents from "../../overrides/components/EIC-related-contents";
-import { media, themeVal, glsp } from "$veda-ui/@devseed-ui/theme-provider";
+import { glsp } from "$veda-ui/@devseed-ui/theme-provider";
 import { decorativeHeader } from "../../overrides/common/style";
-import { toolsStoryIds, k12StoryIds } from "../../overrides/common/story-data";
+import {
+  teachToolsStoryIds,
+  teachK12StoryIds,
+} from "../../overrides/common/story-data";
 
 const StyledH2 = styled.h2`
   ${decorativeHeader}
@@ -24,11 +27,11 @@ export default function TeachPage() {
       <FoldBody>
         <FoldSection>
           <StyledH2> Tools & Training </StyledH2>
-          <RelatedContents storyIds={toolsStoryIds} />
+          <RelatedContents storyIds={teachToolsStoryIds} />
         </FoldSection>
         <FoldSection>
           <StyledH2> K-12 Resources </StyledH2>
-          <RelatedContents storyIds={k12StoryIds} />
+          <RelatedContents storyIds={teachK12StoryIds} />
         </FoldSection>
       </FoldBody>
     </Fold>

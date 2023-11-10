@@ -1,4 +1,4 @@
-import { media, themeVal, glsp } from "$veda-ui/@devseed-ui/theme-provider";
+import { themeVal, glsp } from "$veda-ui/@devseed-ui/theme-provider";
 import { css } from '$veda-ui/styled-components';
 
 export const focusStyle = css`

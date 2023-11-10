@@ -1,13 +1,13 @@
 import React from "$veda-ui/react";
 import styled from "$veda-ui/styled-components";
-import { media, themeVal, glsp } from "$veda-ui/@devseed-ui/theme-provider";
+import { media, glsp } from "$veda-ui/@devseed-ui/theme-provider";
 import { stories } from "veda";
 import Hug from "$veda-ui-scripts/styles/hug";
 import {
   Card,
   CardList
 } from "$veda-ui-scripts/components/common/card";
-import { focusStyle } from "../common/style";
+import { ContentsPropType } from './theme-card';
 
 const CardWrapper = styled(Hug)`
   padding: ${glsp(1, 0)};
@@ -26,7 +26,7 @@ const EvenCardList = styled(CardList)`
   `}
 `
 
-export default function EICRelatedContents({storyIds}) {
+export default function EICRelatedContents({ storyIds }:ContentsPropType) {
   const relatedData = Object.keys(stories)
   .map((key) => stories[key].data)
   .filter((story) => storyIds.includes(story.id));
