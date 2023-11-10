@@ -5,7 +5,6 @@ import { media, themeVal, glsp } from "$veda-ui/@devseed-ui/theme-provider";
 import { stories } from "veda";
 import Hug from "$veda-ui-scripts/styles/hug";
 import {
-  Card,
   CardList
 } from "$veda-ui-scripts/components/common/card";
 
@@ -40,6 +39,10 @@ const ThemeLink = styled(Link)`
   margin: 0;
 `
 
+const PrimaryColorH3 = styled.h3`
+  color: ${themeVal('color.primary')}
+`
+
 export default function ThemeCards({storyIds}) {
 
   const relatedData = Object.keys(stories)
@@ -49,7 +52,7 @@ export default function ThemeCards({storyIds}) {
   const cards = relatedData.map((t) => (
     <li>
       <ThemeCard key={t.id}>
-        <h3>{t.name}</h3>
+        <PrimaryColorH3>{t.name}</PrimaryColorH3>
         <ThemeCardImageWrapper>
           <img src={t.media.src} alt={t.media.alt} />
         </ThemeCardImageWrapper>

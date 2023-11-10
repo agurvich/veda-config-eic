@@ -21,7 +21,7 @@ const CardWrppaer = styled(Hug)`
 `;
 
 const themeLandingPageIds = [
-  "air-quality",
+  "air_quality",
   "agriculture",
   "biodiversity",
   "disasters",
