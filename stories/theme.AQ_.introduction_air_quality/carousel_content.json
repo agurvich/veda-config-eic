@@ -1,0 +1,35 @@
+[
+    {
+        "src":"https://www.youtube.com/embed/C_Gn3LYiZhw",
+        "title":"Nitrogen Dioxide Over the United States, 2005-2022",
+        "caption":"This visualization shows concentrations of the air pollutant nitrogen dioxide in the lower atmosphere as detected by the Ozone Monitoring Instrument on NASA's Aura satellite, averaged yearly from 2005-2022. Over time, this air pollutant decreased even though population and the number of cars on the roads increased. The shift is the result of regulations, technology improvements, and economic changes. This air pollutant affects respiratory system and is an ingredient in other air pollutants like ground-level ozone. Nitrogen dioxide is mainly created by the burning of gasoline in cars and coal in power plants."
+    },{
+        "src":"https://www.youtube.com/embed/qaRRYQY9b48",
+        "title":"Surface Nitrogen Dioxide in the Washington D.C. region.",
+        "caption":"This data visualization shows surface-level nitrogen dioxide data for the Washington DC region spanning 2005 to 2020 (annual averages). Higher values are dark purple and lower values are light blue."
+    },{
+        "src":"https://www.youtube.com/embed/cOVNPI1FcuE",
+        "title":"PM2.5 in the Washington D.C. region",
+        "caption":"Fine particular matter (PM2.5) are tiny particles (e.g., smoke and dust) that cause numerous health issues when breathed in. This shows PM2.5 for the Washington DC region as a yearly average from 2000 to 2018 with higher levels as dark red and lower levels as bright yellow. The data is of ground-level fine particulate matter (PM2.5) from the Washington University in St. Louis Atmospheric Composition Analysis Group."
+    },{
+        "src":"https://www.youtube.com/embed/SRPs8j5D6zA",
+        "title":"Particulate Matter 2.5 (PM2.5) across North America",
+        "caption":"This shows fine particulate matter (PM2.5) data for North America as a yearly average from 2000 to 2018. Higher values are dark red and lower values are bright yellow. PM2.5 are tiny particles (e.g., smoke and dust) that cause numerous health issues when breathed in. The data is of ground-level fine particulate matter from the Washington University in St. Louis Atmospheric Composition Analysis Group. "
+    },{
+        "src":"https://www.youtube.com/embed/rVWt9IYXS2w",
+        "title":"Surface Nitrogen Dioxide across North America",
+        "caption":"Concentrations of the air pollutant nitrogen dioxide in the lower atmosphere as detected by the Ozone Monitoring Instrument on NASA's Aura satellite, as an average for each year from 2005 to 2022. Over time this air pollutant has decreased even though population and the number of cars on the roads have increased. The shift is the result of regulations, technology improvements and economic changes. Nitrogen dioxide can impact the respiratory system, and it is an ingredient in pollutants including ground-level ozone. The gas is produced primarily during the burning of gasoline in cars and trucks and coal in power plants."
+    },{
+        "src":"https://www.youtube.com/embed/RCVUIcVKkXs",
+        "title":"Methane Emissions from Wetlands",
+        "caption":"This view of methane emissions from wetlands runs from 1980-2021. The highest concentrations appear as white and lower levels showing in grades of purple  Methane is a greenhouse gas that contributes to about one-third of global warming. Wetland habitats include waterlogged soils and permafrost, making them important reservoirs for carbon and thus help guard against global warming. But as a warming climate floods or dries out wetlands, their trapped carbon gets released into the atmosphere as methane."
+    },{
+        "src":"https://www.youtube.com/embed/aHBDHTXRzxY",
+        "title":"Active Fires As Observed by VIIRS, January-September 2021",
+        "caption":"This view of fires around the world from Jan. 1 to Sep. 24, 2021, is thanks to data from  the Visible Infrared Imaging Radiometer Suite, or  (VIIRS), aboard NASA’s Suomi-NPP satellite and the National Oceanic and Atmospheric Administration's NOAA-20 satellite. "
+    },{
+        "src":"https://www.youtube.com/embed/miTwo0oKMB4",
+        "title":"Spread of the Dixie Fire",
+        "caption":"The largest fire in California’s recorded history was the 2021 Dixie Fire. Combining active fire detections via NASA’s Suomi-NPP satellite with computer models, Earth scientists could update the size of the fire and estimate where it would spread. The data from Suomi-NPP provided updated data every 12 hours. In this visualization, yellow lines show the fire front lines based on the active fire data (red points) every 12 hours. In total, the Dixie fire burned for more than 100 days, including more than a month of fire activity after the perimeter was contained in mid-September."
+    }
+]
