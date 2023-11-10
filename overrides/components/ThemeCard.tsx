@@ -34,8 +34,11 @@ const ThemeLink = styled(Link)`
   position: absolute;
   inset: 0;
   pointer-events: auto;
-  font-size: 0;
   margin: 0;
+  &:focus {
+    outline: 1px solid #212121;
+    outline: 5px auto -webkit-focus-ring-color;
+  }
 `
 
 const PrimaryColorH3 = styled.h2`
