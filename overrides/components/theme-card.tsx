@@ -1,5 +1,5 @@
 import React from "$veda-ui/react";
-import styled from "$veda-ui/styled-components";
+import styled, {css} from "$veda-ui/styled-components";
 import { Link } from "$veda-ui/react-router-dom";
 import { media, themeVal, glsp } from "$veda-ui/@devseed-ui/theme-provider";
 import { stories } from "veda";
@@ -7,6 +7,7 @@ import Hug from "$veda-ui-scripts/styles/hug";
 import {
   CardList
 } from "$veda-ui-scripts/components/common/card";
+import { focusStyle } from "../common/style";
 
 const CardWrapper = styled(Hug)`
   padding: ${glsp(1, 0)};
@@ -35,10 +36,8 @@ const ThemeLink = styled(Link)`
   inset: 0;
   pointer-events: auto;
   margin: 0;
-  &:focus {
-    outline: 1px solid #212121;
-    outline: 5px auto -webkit-focus-ring-color;
-  }
+  font-size: 0;
+  ${focusStyle}
 `
 
 const PrimaryColorH3 = styled.h2`
@@ -51,6 +50,7 @@ export default function ThemeCards({storyIds}) {
   const relatedData = Object.keys(stories)
   .map((key) => stories[key].data)
   .filter((story) => storyIds.includes(story.id));
+
   console.log(relatedData)
   const cards = relatedData.map((t) => (
     <li>
@@ -60,7 +60,7 @@ export default function ThemeCards({storyIds}) {
           <img src={t.media.src} alt={t.media.alt} />
         </ThemeCardImageWrapper>
         <p>{t.description}</p>
-        <ThemeLink to={t.id} />
+        <ThemeLink to={t.id}>View more</ThemeLink>
       </ThemeCard>
     </li>
   ))

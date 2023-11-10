@@ -7,6 +7,7 @@ import {
   Card,
   CardList
 } from "$veda-ui-scripts/components/common/card";
+import { focusStyle } from "../common/style";
 
 const CardWrapper = styled(Hug)`
   padding: ${glsp(1, 0)};
@@ -14,15 +15,8 @@ const CardWrapper = styled(Hug)`
 `;
 
 const StyledCard = styled(Card)`
-  border-radius: 0;
-  border:  1px solid ${themeVal('color.base-200a')};
-  box-shadow: none;
   figure {
-    max-height: 200px;
-  }
-
-  header h3 {
-    color: ${themeVal('color.primary')};
+    height: 200px;
   }
 `
 

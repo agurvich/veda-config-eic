@@ -1,32 +1,36 @@
 import React from "$veda-ui/react";
-import styled, { css } from "$veda-ui/styled-components";
-import { Fold } from "$veda-ui-scripts/components/common/fold";
-import RelatedContents from '../../overrides/components/EICRelatedContents'
+import styled from "$veda-ui/styled-components";
+import { Fold, FoldBody } from "$veda-ui-scripts/components/common/fold";
+import RelatedContents from "../../overrides/components/EIC-related-contents";
 import { media, themeVal, glsp } from "$veda-ui/@devseed-ui/theme-provider";
-
-const decorativeHeader = css`
-  column-span: all;
-  max-width: 52rem;
-  display: flex;
-  flex-direction: column;
-  gap: calc(${glsp()} - ${glsp(0.25)});
-  &::before {
-    content: '';
-    width: ${glsp(2)};
-    height: ${glsp(0.25)};
-    border-radius: ${themeVal('shape.rounded')};
-    background: ${themeVal('color.primary')};
-  }
-`
+import { decorativeHeader } from "../../overrides/common/style";
+import { toolsStoryIds, k12StoryIds } from "../../overrides/common/story-data";
 
 const StyledH2 = styled.h2`
   ${decorativeHeader}
-`
+  margin-bottom: ${glsp(0.5)};
+`;
+
+const FoldSection = styled.div`
+  grid-column: 1 / -1;
+  display: flex;
+  flex-flow: column nowrap;
+  margin-bottom: ${glsp(2)};
+`;
+
 export default function TeachPage() {
   return (
     <Fold>
-      <StyledH2> STEM </StyledH2>
-      <RelatedContents storyIds={['globe_protocol_etraining', 'stem_resources', 'climate_kids']} />
+      <FoldBody>
+        <FoldSection>
+          <StyledH2> Tools & Training </StyledH2>
+          <RelatedContents storyIds={toolsStoryIds} />
+        </FoldSection>
+        <FoldSection>
+          <StyledH2> K-12 Resources </StyledH2>
+          <RelatedContents storyIds={k12StoryIds} />
+        </FoldSection>
+      </FoldBody>
     </Fold>
   );
 }
