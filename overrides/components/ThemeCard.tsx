@@ -18,11 +18,10 @@ const ThemeCard = styled.article`
   display: flex;
   flex-flow: column nowrap;
   border-top: 1px solid ${themeVal('color.base-200a')};
-  padding-top: ${glsp(1)};
 `
 const ThemeCardImageWrapper = styled.figure`
-  padding: ${glsp(1)} 0;
   height: 240px;
+  margin-bottom: ${glsp(1.5)};
   img {
     height: 100%;
     width: 100%;
@@ -39,8 +38,9 @@ const ThemeLink = styled(Link)`
   margin: 0;
 `
 
-const PrimaryColorH3 = styled.h3`
-  color: ${themeVal('color.primary')}
+const PrimaryColorH3 = styled.h2`
+  color: ${themeVal('color.primary')};
+  margin: ${glsp(1.5)} 0;
 `
 
 export default function ThemeCards({storyIds}) {

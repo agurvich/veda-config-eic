@@ -15,6 +15,8 @@ const CardWrapper = styled(Hug)`
 
 const StyledCard = styled(Card)`
   border-radius: 0;
+  border:  1px solid ${themeVal('color.base-200a')};
+  box-shadow: none;
   figure {
     max-height: 200px;
   }
@@ -40,7 +42,7 @@ export default function EICRelatedContents({storyIds}) {
       <StyledCard 
         key={t.id}
         linkLabel="View more"
-        linkTo={`/stories/${t.id}`}
+        linkTo={t.asLink?.url?? `/stories/${t.id}`}
         title={t.name}
         description={t.description}
         imgSrc={t.media.src}
