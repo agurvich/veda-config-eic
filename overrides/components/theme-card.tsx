@@ -55,7 +55,6 @@ export default function ThemeCards({storyIds}: ContentsPropType) {
   .map((key) => stories[key].data)
   .filter((story) => storyIds.includes(story.id));
 
-  console.log(relatedData)
   const cards = relatedData.map((t) => (
     <li>
       <ThemeCard key={t.id}>
