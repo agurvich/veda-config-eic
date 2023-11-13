@@ -1,6 +1,6 @@
 import React from "$veda-ui/react";
 import { stories} from "veda";
-import ThemeCards from '../../components/theme-card';
+import ThemeCards from '../../components/theme-cards';
 import { Fold } from "$veda-ui-scripts/components/common/fold";
 import { themeLandingPageIds } from "../../common/story-data";
 

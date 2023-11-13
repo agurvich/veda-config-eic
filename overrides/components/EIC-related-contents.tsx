@@ -7,7 +7,7 @@ import {
   Card,
   CardList
 } from "$veda-ui-scripts/components/common/card";
-import { ContentsPropType } from './theme-card';
+import { ContentsPropType } from './theme-cards';
 
 const CardWrapper = styled(Hug)`
   padding: ${glsp(1, 0)};
