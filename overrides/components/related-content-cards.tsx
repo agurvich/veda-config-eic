@@ -20,9 +20,9 @@ const StyledCard = styled(Card)`
   }
 `
 
-const EvenCardList = styled(CardList)`
+const FlexibleCardList = styled(CardList)`
   ${media.largeUp`
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: ${(props) => (props.cardAmount %2 ==0 ? "repeat(2, 1fr)" : "repeat(3, 1fr)")}
   `}
 `
 
@@ -45,21 +45,11 @@ export default function EICRelatedContents({ storyIds }:ContentsPropType) {
     </li>
   ))
 
-  const evenNumberCard = relatedData.length%2 == 0
-
   return (
-      <CardWrapper>
-        {evenNumberCard && 
-          <EvenCardList>
-            {cards}
-          </EvenCardList>
-        }
-        {!evenNumberCard && 
-          <CardList>
-            {cards}
-          </CardList>
-        }
-      </CardWrapper>
-    
+    <CardWrapper>
+        <FlexibleCardList cardAmount ={relatedData.length}>
+          {cards}
+        </FlexibleCardList>
+    </CardWrapper>
   );
 }
