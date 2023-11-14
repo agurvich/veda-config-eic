@@ -3,15 +3,20 @@ featuredOn:
   - wildfires 
 id: "wildfires"
 name: Wildfires
-description: " "
-asLink:
-  url: https://nasa.gov
+description: "
+  Wildfires near homes can be deadly when they are out of control, but wildfires are also key to keeping ecosystems healthy and thriving.
+  Learn about how wildfires have intensified with a changing climate across the world, and how Earth data is being used to identify, track, and monitor wildfires and their associated risks.
+"
 media:
-  src: ::file ./external_headers/connected_earth_wildfire.jpg
-  alt: Photographic imagery of a hurricane taken from the International Space Station
+  src: ::file ./external_headers/connected_earth_wildfire.png
+  alt: "
+    Satellite image capturing a wildfire in a forested area.
+    The left side shows dense green foliage, while the right reveals scorched earth and active fire lines with bright orange flames.
+    A thick plume of smoke drifts from the fire, indicating the direction of the wind.
+  "
   author:
-    name: ""
-    url: ""
+    name: "NASA"
+    url: "https://nasa.gov"
 pubDate: 2023-10-18
 taxonomy:
   - name: Theme Page
@@ -19,6 +24,20 @@ taxonomy:
       - wildfires
 ---
 
-<Block type="wide">
-  <Prose> include custom card gallery </Prose>
+import CardGallery from "./components/card_gallery";
+import { wildfiresStoryIds } from "../overrides/common/story-data";
+
+<Block type='wide'>
+  <Prose>
+    ## Info
+
+    Changes in climate, weather, vegetation, and the landscape all play a role in whether a spark becomes a flame.
+    Wildfires, also referred to as wildland fires, pose threats to human safety across large geographic regions and can cause widespread ecological impacts.
+    For instance, smoke from fires can impact air quality in areas across the country or even the world.
+    At the same time, wildfires are a natural process that maintain ecosystem stability reinforcing the need to understand the multifaceted nature of fires across the landscape.
+    The unique vantage point offered by Earth observing satellites provides researchers and land managers with the ability to assess broadscale extents of fire related hazards that is not possible with traditional ground-based monitoring.
+    This information is used by agencies at multiple levels of government and management teams on the ground during all stages of wildfires, including monitoring fire prone regions, tracking and responding to active wildfires, and assessing post wildfire zones.
+  </Prose>
 </Block>
+
+<CardGallery title={"Wildfires Stories"} storyIds={wildfiresStoryIds} />

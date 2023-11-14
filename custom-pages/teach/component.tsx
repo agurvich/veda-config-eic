@@ -6,7 +6,6 @@ import { glsp } from "$veda-ui/@devseed-ui/theme-provider";
 import { decorativeHeader } from "../../overrides/common/style";
 import {
   teachToolsStoryIds,
-  teachK12StoryIds,
 } from "../../overrides/common/story-data";
 
 const StyledH2 = styled.h2`
@@ -28,10 +27,6 @@ export default function TeachPage() {
         <FoldSection>
           <StyledH2> Tools & Training </StyledH2>
           <RelatedContents storyIds={teachToolsStoryIds} />
-        </FoldSection>
-        <FoldSection>
-          <StyledH2> K-12 Resources </StyledH2>
-          <RelatedContents storyIds={teachK12StoryIds} />
         </FoldSection>
       </FoldBody>
     </Fold>

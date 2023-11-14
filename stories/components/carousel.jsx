@@ -35,7 +35,7 @@ export default function Carousel({
             display:'inline-flex',
             width:'100%',
             flexDirection:'column'}}>
-            {contentArray[index].title}
+            {`${index+1}/${contentArray.length}: ${contentArray[index].title} `}
             <div style={{display:'flex',justifyContent:'center'}}>
                 <iframe
                     style={{

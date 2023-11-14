@@ -3,15 +3,17 @@ featuredOn:
   - water_resources 
 id: "water_resources"
 name: Water Resources
-description: " "
-asLink:
-  url: https://wwao.jpl.nasa.gov/water-portal/
+description: "
+  Water is one of Earth's most vital resources, but in many regions, water supplies are increasingly scarce.
+  Learn how Earth data is improving monitoring and forecasting of water use, availability and water extremes."
 media:
-  src: ::file ./external_headers/connected_earth_water_resources.jpg
-  alt: Photographic imagery of a hurricane taken from the International Space Station
+  src: ::file ./external_headers/connected_earth_water_resources.png
+  alt: "
+    Aerial view of shallow turquoise waters with intricate, vein-like patterns formed by the interaction of water currents and sand beneath the surface, creating a natural, abstract tapestry.
+  "
   author:
-    name: ""
-    url: ""
+    name: "NASA"
+    url: "https://nasa.gov"
 pubDate: 2023-10-18
 taxonomy:
   - name: Theme Page
@@ -19,6 +21,21 @@ taxonomy:
       - water resources
 ---
 
-<Block type="wide">
-  <Prose> include custom card gallery </Prose>
+import CardGallery from "./components/card_gallery";
+import { waterResourcesStoryIds } from "../overrides/common/story-data";
+
+<Block type='wide'>
+  <Prose>
+    ## Info
+
+    Water is a vital resource to life on Earth.
+    While the majority of Earth's surface is covered in water, only 1 percent of Earth's water is readily available for use.
+    This includes water used in essential activities such as consumption or agricultural practices required to sustain life.
+    As populations expand and demand for water grows, understanding how changing temperatures and precipitation patterns impact global water supply is important.
+    The water cycle describes how water moves throughout the planet's atmosphere, oceans, and land; highlighting connections among each phase of the cycle.
+    Utilizing a combination of Earth observing satellites and sensors, ground-based monitoring, and scientific modeling, we can observe Earth's water resources at all stages of the water cycle.
+    This information can be used to make informed management decision surrounding the most vital resource on planet Earth.
+  </Prose>
 </Block>
+
+<CardGallery title={"Water Resources Stories"} storyIds={waterResourcesStoryIds} />

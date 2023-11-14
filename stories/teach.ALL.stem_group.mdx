@@ -1,0 +1,29 @@
+---
+featuredOn:
+  - teach
+id: "stem_group"
+name: STEM Resources
+description: "
+  Discover tools for students and educators to learn about planetary change.
+"
+media:
+  src: ::file ./external_headers/stem_resources.png
+  alt: "
+    Satellite imagery of fluffy white clouds over an ocean backdrop; ice or snow covered land is barely visible in the top-left corner.
+  "
+  author:
+    name: "NASA"
+    url: "https://nasa.gov"
+pubDate: 2023-10-18
+taxonomy:
+  - name: Teaching Resource
+    values:
+      - STEM
+---
+
+import CardGallery from "./components/card_gallery";
+
+<CardGallery
+  title={"STEM Resources"}
+  storyIds={["stem_resources","climate_kids", "earth_observatory", "globe_k13_learning"]} />
+

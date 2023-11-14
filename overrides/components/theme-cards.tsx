@@ -56,7 +56,7 @@ export default function ThemeCards({storyIds}: ContentsPropType) {
   .filter((story) => storyIds.includes(story.id));
 
   const cards = relatedData.map((t) => (
-    <li>
+    <li key={`${t.id}-theme-card`}>
       <ThemeCard key={t.id}>
         <PrimaryColorH3>{t.name}</PrimaryColorH3>
         <ThemeCardImageWrapper>

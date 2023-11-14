@@ -3,14 +3,18 @@ featuredOn:
   - disasters
 id: "disasters"
 name: Disasters
-description: "Learn how NASA’s satellites are providing actionable data to help responders prepare for disasters, to map widespread damage, to guide recovery, and to build more resilient communities."
-
+theme: true
+description: "
+  Learn how satellites and ground surveys are providing actionable data to help responders prepare for disasters, to map widespread damage, to guide recovery, and to build more resilient communities.
+"
 media:
-  src: ::file ./external_headers/connected_earth_disasters.jpg
-  alt: Photographic imagery of a hurricane taken from the International Space Station
+  src: ::file ./external_headers/connected_earth_disasters.png
+  alt: "
+    Photographic imagery of a hurricane taken from the International Space Station
+  "
   author:
-    name: ""
-    url: ""
+    name: "NASA"
+    url: "https://nasa.gov"
 pubDate: 2023-10-18
 taxonomy:
   - name: Theme Page
@@ -18,6 +22,56 @@ taxonomy:
       - disasters
 ---
 
-<Block type="wide">
-  <Prose> include custom card gallery </Prose>
+import CardGallery from "./components/card_gallery";
+import { disastersStoryIds } from "../overrides/common/story-data";
+
+import Carousel from './components/carousel.jsx';
+import contentArray from './theme.DIS.introduction_disasters/carousel_content.json';
+
+<Block type='wide'>
+  <Prose>
+    ## Info
+
+    Hurricanes, tropical cyclones, blizzards, landslides, floods, and droughts -- when they arrive in communities they can turn into a disaster.
+    As climate change is spurring more extreme weather events, disasters are becoming more costly and damaging.
+
+    Earth data and rapid information sharing between agencies is more important than ever.
+    Before, during, and after disasters strike, Federal agencies coordinate with decision-makers and local governments, providing actionable data to recover from disaster impacts and build resilient communities.
+  </Prose>
 </Block>
+
+<Block type="wide">
+  <Figure>
+    <Embed height="405" src="https://www.youtube.com/embed/KmDET3DsdZQ" title="NASA and Hurricanes" />
+    <Caption
+      attrAuthor='NASA'
+      attrUrl='https://nasa.gov/'
+    >
+      Watch how Earth observing satellites are providing actionable data to help responders prepare for disasters, to map widespread damage, to guide recovery, and to build more resilient communities.
+   </Caption>
+  </Figure>
+</Block>
+
+<Block type="wide">
+  <Prose>
+  ## Disasters
+  Hurricanes, tropical cyclones, blizzards, landslides, floods, and droughts -- when they arrive in communities they can turn into a disaster. As climate change is spurring more extreme weather events, disasters are becoming more costly and damaging. Earth data and rapid information sharing between agencies is more important than ever.
+  Before, during, and after disasters strike, Federal agencies coordinate with decision-makers and local governments, providing actionable data to recover from disaster impacts and build resilient communities. 
+  </Prose>
+</Block>
+
+<Carousel {...{contentArray}} />
+
+<Block type="wide">
+  <Prose>
+    ## Trainings & Tools
+    <Link to="https://appliedsciences.nasa.gov/what-we-do/capacity-building/arset/arset-disasters-training">
+      ARSET Disasters Trainings (English)
+    </Link>
+    <Link to="https://appliedsciences.nasa.gov/what-we-do/capacity-building/arset/arset-disasters-training?title=&languages=5">
+      ARSET Disasters Trainings (Spanish)
+    </Link>
+  </Prose>
+</Block>
+
+<CardGallery title={"Disasters Stories"} storyIds={disastersStoryIds} />

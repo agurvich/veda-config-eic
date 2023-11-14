@@ -32,7 +32,7 @@ export default function EICRelatedContents({ storyIds }:ContentsPropType) {
   .filter((story) => storyIds.includes(story.id));
 
   const cards = relatedData.map((t) => (
-    <li>
+    <li key={`${t.id}-card`}>
       <StyledCard 
         key={t.id}
         linkLabel="View more"
