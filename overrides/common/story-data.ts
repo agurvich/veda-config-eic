@@ -17,13 +17,12 @@ export const teachToolsStoryIds = [
 ];
 
 export const visitLocationStoryIds = [
-  "globe_protocol_etraining",
-  "stem_resources",
-  "climate_kids",
+  "nasa_headquarters",
+  "si_nmnh"
 ];
 
 export const visitLocationFeaturesStoryIds = [
-  "globe_protocol_etraining",
-  "stem_resources",
-  "climate_kids",
+  "hyperwall",
+  "earth_pulse",
+  "immersive_earth"
 ];
