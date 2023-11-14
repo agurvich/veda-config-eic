@@ -8,18 +8,12 @@ import {
   ButtonNext,
   DotGroup,
 } from "pure-react-carousel";
-import Embed from "$veda-ui-scripts/components/common/blocks/embed";
-// required CSS for pure-react-carousel
-import "pure-react-carousel/dist/react-carousel.es.css";
-import { useMediaQuery } from "$veda-ui-scripts/utils/use-media-query";
-
 import {
   CollecticonChevronLeft,
   CollecticonChevronRight,
 } from "$veda-ui/@devseed-ui/collecticons";
 
 import { createButtonStyles } from "$veda-ui/@devseed-ui/button";
-import { focusStyle } from "./style";
 
 import {
   glsp,
@@ -29,8 +23,15 @@ import {
   visuallyHidden,
 } from "$veda-ui/@devseed-ui/theme-provider";
 
+import Embed from "$veda-ui-scripts/components/common/blocks/embed";
+import { useMediaQuery } from "$veda-ui-scripts/utils/use-media-query";
+// required CSS for pure-react-carousel
+import "pure-react-carousel/dist/react-carousel.es.css";
+
+import { focusStyle } from "./style";
+
 const SROnly = styled.span`
-  font-size: 0;
+  ${visuallyHidden}
 `;
 const FeaturedList = styled.div`
   /* ignore stylelint parseError */
@@ -106,10 +107,15 @@ const DescWrapper = styled.div`
   margin: ${glsp(3)} 0;
 `;
 
-export default function Carousel({ items }) {
+interface EmbeddedVideosPropType {
+  src: string;
+  title: string;
+  caption: string;
+}
+
+export default function Carousel({ items }: EmbeddedVideosPropType) {
   const { isLargeUp } = useMediaQuery();
   const height = isLargeUp ? 515 : 315;
-  console.log;
   return (
     <CarouselProvider
       isIntrinsicHeight={true}
@@ -121,18 +127,17 @@ export default function Carousel({ items }) {
           <Slider>
             {items.map((t, idx) => (
               <FeaturedContent
-                key={t.desc}
+                key={t.title}
                 role="group"
                 aria-roledescription="Slide"
                 aria-labelledby={`carousel-item-${idx}__label`}
               >
                 <Slide index={idx}>
-                  <Embed
-                    height={height}
-                    src={t.src}
-                    title="YouTube video player"
-                  ></Embed>
-                  <DescWrapper>{t.caption}</DescWrapper>
+                  <Embed height={height} src={t.src}></Embed>
+                  <DescWrapper>
+                    <h3>{t.title}</h3>
+                    <p>{t.caption}</p>
+                  </DescWrapper>
                 </Slide>
                 <SROnly id={`carousel-item-${idx}__label`}>{t.title}</SROnly>
               </FeaturedContent>
