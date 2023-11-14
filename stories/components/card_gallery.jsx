@@ -19,7 +19,7 @@ const FoldSection = styled.div`
 `;
 
 export default function CardGallery({title, storyIds}) {
-  return (
+  return ( storyIds.length && 
     <Fold>
       <FoldBody>
         <FoldSection>
