@@ -22,7 +22,10 @@ taxonomy:
       - disasters
 ---
 
-<Block>
+import CardGallery from "./components/card_gallery";
+import { disastersStoryIds } from "../overrides/common/story-data";
+
+<Block type='wide'>
   <Prose>
     ## Info
 
@@ -34,6 +37,5 @@ taxonomy:
   </Prose>
 </Block>
 
-<Block type="wide">
-  <Prose> include custom card gallery </Prose>
-</Block>
+
+<CardGallery title={"Disasters Stories"} storyIds={disastersStoryIds} />

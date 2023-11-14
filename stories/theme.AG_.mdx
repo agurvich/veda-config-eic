@@ -22,6 +22,9 @@ taxonomy:
       - agriculture
 ---
 
+import CardGallery from "./components/card_gallery";
+import { agricultureStoryIds } from "../overrides/common/story-data";
+
 <Block>
   <Prose>
     ## Info
@@ -33,6 +36,4 @@ taxonomy:
 </Block>
 
 
-<Block type="wide">
-  <Prose> include custom card gallery </Prose>
-</Block>
+<CardGallery title={"Agriculture Stories"} storyIds={agricultureStoryIds} />

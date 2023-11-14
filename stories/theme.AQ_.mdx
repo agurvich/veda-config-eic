@@ -23,7 +23,10 @@ taxonomy:
       - air quality
 ---
 
-<Block>
+import CardGallery from "./components/card_gallery";
+import { airQualityStoryIds } from "../overrides/common/story-data";
+
+<Block type='wide'>
   <Prose>
   ## Info
 
@@ -41,6 +44,4 @@ taxonomy:
   </Prose>
 </Block>
 
-<Block type="wide">
-  <Prose> include custom card gallery </Prose>
-</Block>
+<CardGallery title={"Air Quality Stories"} storyIds={airQualityStoryIds} />

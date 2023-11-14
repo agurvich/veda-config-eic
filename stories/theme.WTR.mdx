@@ -21,7 +21,10 @@ taxonomy:
       - water resources
 ---
 
-<Block>
+import CardGallery from "./components/card_gallery";
+import { waterResourcesStoryIds } from "../overrides/common/story-data";
+
+<Block type='wide'>
   <Prose>
     ## Info
 
@@ -35,8 +38,4 @@ taxonomy:
   </Prose>
 </Block>
 
-
-
-<Block type="wide">
-  <Prose> include custom card gallery </Prose>
-</Block>
+<CardGallery title={"Water Resources Stories"} storyIds={waterResourcesStoryIds} />

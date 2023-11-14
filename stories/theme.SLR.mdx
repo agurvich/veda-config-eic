@@ -24,7 +24,10 @@ taxonomy:
       - sea level rise
 ---
 
-<Block>
+import CardGallery from "./components/card_gallery";
+import { seaLevelRiseStoryIds } from "../overrides/common/story-data";
+
+<Block type='wide'>
   <Prose>
     ## Info
 
@@ -39,6 +42,4 @@ taxonomy:
   </Prose>
 </Block>
 
-<Block type="wide">
-  <Prose> include custom card gallery </Prose>
-</Block>
+<CardGallery title={"Sea Level Rise Stories"} storyIds={seaLevelRiseStoryIds} />
