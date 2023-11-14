@@ -6,9 +6,11 @@ import { media } from "$veda-ui/@devseed-ui/theme-provider";
 
 import epaImg from "../media/epa.svg";
 import nasaImg from "../media/nasa.png";
-import nistImg from "../media/nist.png";
-import nistImgNeg from "../media/nist-neg.png";
 import noaaImg from "../media/noaa.png";
+import femaImg from "../media/fema.png";
+import usaidImg from "../media/usaid.png";
+import usdaImg from "../media/usda.png";
+import usgsImg from "../media/usgs.png";
 
 const LogoWrapper = styled.div`
   grid-column: 1 / -1;
@@ -27,33 +29,39 @@ const LogoWrapper = styled.div`
 `;
 
 export default function Partners(props: {
-  variation: "positive" | "negative";
   size: "big" | "small"
 }) {
-  const { variation, size } = props;
-  const squareLogoHeight = size == "big"? "80" : "40"
-  const wideLogoHeight = size == "big"? "28" : "14"
-
+  const { size } = props;
+  const squareLogoHeight = size == "big" ? "80" : "40";
+  
   return (
     <LogoWrapper>
-      <a href="https://www.epa.gov/">
-        <Image src={epaImg} alt="EPA logo" height={squareLogoHeight} />
-      </a>
-
       <a href="https://www.nasa.gov/">
         <Image src={nasaImg} alt="NASA logo" height={squareLogoHeight} />
       </a>
 
-      <a href="https://www.nist.gov/">
-        {variation === "positive" ? (
-          <Image src={nistImg} alt="NIST logo" height={wideLogoHeight} />
-        ) : (
-          <Image src={nistImgNeg} alt="NIST logo" height={wideLogoHeight} />
-        )}
+      <a href="https://www.epa.gov/">
+        <Image src={epaImg} alt="EPA logo" height={squareLogoHeight} />
+      </a>
+
+      <a href="https://www.fema.gov/">
+        <Image src={femaImg} alt="FEMA logo" height={squareLogoHeight} />
       </a>
 
       <a href="https://www.noaa.gov/">
         <Image src={noaaImg} alt="NOAA logo" height={squareLogoHeight} />
+      </a>
+
+      <a href="https://www.usaid.gov/">
+        <Image src={usaidImg} alt="USAID logo" height={squareLogoHeight} />
+      </a>
+
+      <a href="https://www.usda.gov/">
+        <Image src={usdaImg} alt="USAID logo" height={squareLogoHeight} />
+      </a>
+
+      <a href="https://www.usgs.gov/">
+        <Image src={usgsImg} alt="USGS logo" height={squareLogoHeight} />
       </a>
     </LogoWrapper>
   );

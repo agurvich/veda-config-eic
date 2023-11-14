@@ -8,6 +8,8 @@ import { VarHeading } from "$veda-ui-scripts/styles/variable-components";
 import { useMediaQuery } from "$veda-ui-scripts/utils/use-media-query";
 
 import coverImgSrc from "./earth.png";
+import infoIcon from "./info-icon.svg";
+import Image from "$veda-ui-scripts/components/common/blocks/images";
 
 const Hero = styled.div`
   background: ${themeVal("color.primary")};
@@ -21,6 +23,19 @@ const PageHeroHGroup = styled.div`
   flex-flow: row;
   gap: ${glsp(8)};
   align-items: center;
+
+  button {
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    padding: 0;
+    text-align: inherit;
+    font: inherit;
+    border-radius: 0;
+    appearance: none;
+    align-self: flex-end;
+    padding-bottom: 1rem;
+  }
 `;
 
 const HeroHeadline = styled.div`
@@ -34,6 +49,10 @@ const HeroHeadline = styled.div`
 export default function HomeHero(props) {
   const { isMediumUp } = useMediaQuery();
 
+  const infoOnClick = () => {
+    return
+  }
+
   return (
     <Hero>
       <Constrainer>
@@ -45,6 +64,9 @@ export default function HomeHero(props) {
             src={coverImgSrc}
             alt="image of planet"
           />
+          <button id="home-hero-info-icon">
+            <Image src={infoIcon} alt="information" />
+          </button>
         </PageHeroHGroup>
       </Constrainer>
     </Hero>
