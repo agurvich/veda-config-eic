@@ -138,7 +138,13 @@ export default function Carousel({ items }: EmbeddedVideosPropType) {
                   aria-labelledby={`carousel-item-${idx}__label`}
                 >
                   <Slide index={idx}>
-                    <Embed height={height} src={t.src}></Embed>
+                    <Embed
+                      height={height}
+                      src={t.src}
+                      title={t.title}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowfullscreen
+                    ></Embed>
                     <DescWrapper>
                       <h3>{t.title}</h3>
                       <p>{t.caption}</p>
