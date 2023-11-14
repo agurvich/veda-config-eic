@@ -28,14 +28,12 @@ export const visitLocationFeaturesStoryIds = [
 ];
 
 export const airQualityStoryIds = [
-  'introduction_air_quality',
   'air_quality_and_covid19',
   'extra_air_pollution_burden',
   'exploring_nasa_aq_gis' 
 ];
 
 export const agricultureStoryIds = [
-  'introduction_agriculture' 
 ];
 
 export const biodiversityStoryIds = [
@@ -43,7 +41,6 @@ export const biodiversityStoryIds = [
 ];
 
 export const disastersStoryIds = [
-  "introduction_disasters"
 ]
 
 export const energyStoryIds = [
