@@ -61,7 +61,7 @@ export default function Partners(props: {
       </a>
 
       <a href="https://www.usgs.gov/">
-        <Image src={usgsImg} alt="USGS logo" height={squareLogoHeight} />
+        <Image src={usgsImg} alt="USGS logo" height={size == "big" ? "40" : "20"} />
       </a>
     </LogoWrapper>
   );

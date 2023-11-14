@@ -65,12 +65,12 @@ const BottomContent = styled.div`
   width: 80%;
   margin: auto;
   gap: ${glsp()};
-  span:first-child {
+  p {
     width: 60%;
   }
 `
 
-const InfoImageContainer = styled.div`
+const InfoImageContent = styled.div`
   display: flex;
   flex-flow: row;
   background-color: #02225B; // @TODO: But where can I get this color?
@@ -87,6 +87,26 @@ const InfoImageContainer = styled.div`
 
   a {
     width: 18.5rem;
+  }
+`
+
+const CollaboratorsContent = styled.div`
+  display: flex;
+  flex-flow: column;
+  margin: ${glsp(4, 0)};
+  align-items: center;
+  gap: ${glsp()};
+
+  div {
+    margin: 1rem auto;
+  }
+
+  span {
+    color: ${themeVal("color.primary")};
+  }
+
+  p {
+    text-align: center;
   }
 `
 
@@ -117,27 +137,43 @@ export default function HomeComponent() {
             {/* {PlaceHolder for Cards} */}
         </ThemeContent>
         <BottomContent>
-          <span>
-            Earth.gov is also the gateway to other interagency cooperative efforts for our planet, like the <a href="https://hub.ghg.center/hub/">U.S. Greenhouse Gas Center</a>
-          </span>
-          <InfoImageContainer>
-            <div>
+            <p>
+              Earth.gov is also the gateway to other interagency cooperative efforts for our planet, like the <a href="https://hub.ghg.center/hub/">U.S. Greenhouse Gas Center</a>
+            </p>
+            <InfoImageContent>
+              <div>
+                <VarHeading size="small">
+                  U.S. Greenhouse Gas Center
+                </VarHeading>
+                <span>Uniting Data and Technology to Empower Tomorrow's Climate Solutions</span>
+                <Button
+                  forwardedAs={NavLink}
+                  to="https://hub.ghg.center/hub/" //@TODO: This isn't working with external link
+                  size="medium"
+                  radius="square"
+                  variation="primary-fill"
+                >
+                  Visit the U.S. GHG Center website
+                </Button>
+              </div>
+              <Image src={RedEarthImg} alt="USGS logo" height={300} />
+            </InfoImageContent>
+            <CollaboratorsContent>
               <VarHeading size="small">
-                U.S. Greenhouse Gas Center
+                Joining forces <span>for a better tomorrow</span>
               </VarHeading>
-              <span>Uniting Data and Technology to Empower Tomorrow's Climate Solutions</span>
-              <Button
-                forwardedAs={NavLink}
-                to="https://hub.ghg.center/hub/" //@TODO: This isn't working with external link
-                size="medium"
-                radius="square"
-                variation="primary-fill"
-              >
-                Visit the U.S. GHG Center website
-              </Button>
-            </div>
-            <Image src={RedEarthImg} alt="USGS logo" height={300} />
-          </InfoImageContainer>
+              <p>The Earth Information Center is grateful for the support and expertise of our valued, multi-agency collaborators: EPA, FEMA, NASA, NOAA, USAID, USDA, and USGS.</p>
+              <Partners size="small" />
+                <Button
+                    forwardedAs={NavLink}
+                    to="https://hub.ghg.center/hub/" //@TODO: THIS NEEDS TO BE REPLACED
+                    size="medium"
+                    radius="square"
+                    variation="primary-fill"
+                  >
+                  Learn more
+                </Button>
+            </CollaboratorsContent>
         </BottomContent>
       </ContentContainer>
     </>

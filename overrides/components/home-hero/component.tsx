@@ -23,6 +23,14 @@ const PageHeroHGroup = styled.div`
   flex-flow: row;
   gap: ${glsp(8)};
   align-items: center;
+  justify-content: space-between;
+
+  div {
+    display: flex;
+    flex-flow: row;
+    gap: ${glsp(8)};
+    align-items: center;
+  }
 
   button {
     background-color: transparent;
@@ -60,13 +68,15 @@ export default function HomeHero(props) {
           <HeroHeadline>
             <VarHeading size="large">Explore our changing planet</VarHeading>
           </HeroHeadline>
-          <img
-            src={coverImgSrc}
-            alt="image of planet"
-          />
-          <button id="home-hero-info-icon">
-            <Image src={infoIcon} alt="information" />
-          </button>
+          <div>
+            <img
+              src={coverImgSrc}
+              alt="image of planet"
+            />
+            <button id="home-hero-info-icon">
+              <Image src={infoIcon} alt="information" />
+            </button>
+          </div>
         </PageHeroHGroup>
       </Constrainer>
     </Hero>
