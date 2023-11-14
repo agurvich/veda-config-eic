@@ -11,15 +11,9 @@ export const themeLandingPageIds = [
 ];
 
 export const teachToolsStoryIds = [
+  "earth_observation_trainings",
   "globe_protocol_etraining",
-  "stem_resources",
-  "climate_kids",
-];
-
-export const teachK12StoryIds = [
-  "globe_protocol_etraining",
-  "stem_resources",
-  "climate_kids",
+  "stem_group",
 ];
 
 export const visitLocationStoryIds = [

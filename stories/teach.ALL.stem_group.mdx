@@ -1,14 +1,11 @@
 ---
 featuredOn:
   - teach
-id: "stem_resources"
+id: "stem_group"
 name: STEM Resources
 description: "
-  Explore this collection of tools for students and educators to learn about planetary change.
+  Discover tools for students and educators to learn about planetary change.
 "
-theme: true
-asLink:
-  url: https://www.nasa.gov/education/materials/
 media:
   src: ::file ./external_headers/stem_resources.png
   alt: "
@@ -24,8 +21,9 @@ taxonomy:
       - STEM
 ---
 
-<Block type="wide">
-  <Prose>
-  link out
-  </Prose>
-</Block>
+import CardGallery from "./components/card_gallery";
+
+<CardGallery
+  title={"STEM Resources"}
+  storyIds={["stem_resources","climate_kids", "earth_observatory", "globe_k13_learning"]} />
+
