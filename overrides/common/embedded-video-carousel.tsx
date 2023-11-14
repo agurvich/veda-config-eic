@@ -115,7 +115,7 @@ interface EmbeddedVideosPropType {
 
 export default function Carousel({ items }: EmbeddedVideosPropType) {
   const { isLargeUp } = useMediaQuery();
-  const height = isLargeUp ? 515 : 315;
+  const height = isLargeUp ? 500 : 315;
   return (
     <Lazyload
       placeholder={<LoadingSkeleton height={height} />}

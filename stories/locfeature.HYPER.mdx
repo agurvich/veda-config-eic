@@ -25,12 +25,12 @@ taxonomy:
     values:
       - Hyperwall
 ---
-import Carousel from lazy(() => import("../overrides/common/embedded-video-carousel"));
+import Carousel from "../overrides/common/embedded-video-carousel";
 import contentArray from './locfeature.HYPER/carousel_content.json';
 
 
 <Block type='wide'>
   <Figure>
     <Carousel items={contentArray} />
-    </Figure>
+  </Figure>
 </Block>
