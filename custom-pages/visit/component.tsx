@@ -28,7 +28,8 @@ export default function VisitPage() {
         <FoldSection>
           <StyledH2> Features </StyledH2>
           <RelatedContents storyIds={visitLocationFeaturesStoryIds} />
-        </FoldSection><FoldSection>
+        </FoldSection>
+        <FoldSection>
           <StyledH2> Locations </StyledH2>
           <RelatedContents storyIds={visitLocationStoryIds} />
         </FoldSection>
