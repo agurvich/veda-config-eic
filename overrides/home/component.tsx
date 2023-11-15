@@ -1,5 +1,5 @@
 import React from "$veda-ui/react";
-import { NavLink } from "$veda-ui/react-router-dom";
+import { Link } from "$veda-ui/react-router-dom";
 import styled from "$veda-ui/styled-components";
 import { glsp, themeVal, media } from "$veda-ui/@devseed-ui/theme-provider";
 import { Button } from "$veda-ui/@devseed-ui/button";
@@ -91,8 +91,8 @@ const InfoImageContent = styled.div`
     display: flex;
     flex-flow: column;
     gap: ${glsp()};
-    margin: auto;
     padding-left: ${glsp(3)};
+    justify-content: center;
   }
 
   a {
@@ -209,8 +209,8 @@ export default function HomeComponent() {
                 </p>
                 <Partners size="small" />
                 <Button
-                  forwardedAs={NavLink}
-                  to="https://hub.ghg.center/hub/" //@TODO: THIS NEEDS TO BE REPLACED
+                  forwardedAs="a"
+                  href="https://ghg.center/" //@TODO: THIS NEEDS TO BE REPLACED
                   size="medium"
                   radius="square"
                   variation="primary-fill"

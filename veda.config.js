@@ -36,8 +36,8 @@ module.exports = {
 
   strings: {
     stories: {
-      one: "theme",
-      other: "themes",
+      one: "Theme",
+      other: "Themes",
     },
     storiesBanner: "Something related to themes.",
     dataCatalogBanner:
