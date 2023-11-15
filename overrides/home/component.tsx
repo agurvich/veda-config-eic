@@ -8,6 +8,7 @@ import {
   Fold,
   FoldHeader,
   FoldTitle,
+  FoldBody,
   FoldHeadline,
   FoldHeadActions,
 } from "$veda-ui-scripts/components/common/fold";
@@ -68,10 +69,8 @@ const BottomContent = styled(Hug)`
   }
 
   ${media.largeDown`
-    padding: ${glsp(0, 2)};
     width: 100%;
     margin: 0;
-
     p {
       width: 100%;
     }
@@ -149,7 +148,9 @@ export default function HomeComponent() {
         <Fold>
           <FoldHeader>
             <FoldHeadline>
-              <FoldTitleWOAccent size="large">Nine themes, one Earth</FoldTitleWOAccent>
+              <FoldTitleWOAccent size="large">
+                Nine themes, one Earth
+              </FoldTitleWOAccent>
             </FoldHeadline>
             <FoldHeadActions>
               <Button
@@ -166,54 +167,60 @@ export default function HomeComponent() {
 
           <ThemeCards storyIds={themeLandingPageIds} />
         </Fold>
-        <BottomContent>
-          <p>
-            Earth.gov is also the gateway to other interagency cooperative
-            efforts for our planet, like the{" "}
-            <ExpandLink to={`https://ghg.center/`}>
-              {" "}
-              U.S. Greenhouse Gas Center
-            </ExpandLink>
-          </p>
-          <InfoImageContent>
-            <div>
-              <VarHeading size="small">U.S. Greenhouse Gas Center</VarHeading>
-              <span>
-                Uniting Data and Technology to Empower Tomorrow's Climate
-                Solutions
-              </span>
-              <Button
-                forwardedAs={NavLink}
-                to="https://hub.ghg.center/hub/" //@TODO: This isn't working with external link
-                size="medium"
-                radius="square"
-                variation="primary-fill"
-              >
-                Visit the U.S. GHG Center website
-              </Button>
-            </div>
-          </InfoImageContent>
-          <CollaboratorsContent>
-            <VarHeading size="small">
-              Joining forces <span>for a better tomorrow</span>
-            </VarHeading>
-            <p>
-              The Earth Information Center is grateful for the support and
-              expertise of our valued, multi-agency collaborators: EPA, FEMA,
-              NASA, NOAA, USAID, USDA, and USGS.
-            </p>
-            <Partners size="small" />
-            <Button
-              forwardedAs={NavLink}
-              to="https://hub.ghg.center/hub/" //@TODO: THIS NEEDS TO BE REPLACED
-              size="medium"
-              radius="square"
-              variation="primary-fill"
-            >
-              Learn more
-            </Button>
-          </CollaboratorsContent>
-        </BottomContent>
+        <Fold>
+          <FoldBody>
+            <BottomContent>
+              <p>
+                Earth.gov is also the gateway to other interagency cooperative
+                efforts for our planet, like the{" "}
+                <ExpandLink to={`https://ghg.center/`}>
+                  {" "}
+                  U.S. Greenhouse Gas Center
+                </ExpandLink>
+              </p>
+              <InfoImageContent>
+                <div>
+                  <VarHeading size="small">
+                    U.S. Greenhouse Gas Center
+                  </VarHeading>
+                  <span>
+                    Uniting Data and Technology to Empower Tomorrow's Climate
+                    Solutions
+                  </span>
+                  <Button
+                    forwardedAs={NavLink}
+                    to="https://hub.ghg.center/hub/" //@TODO: This isn't working with external link
+                    size="medium"
+                    radius="square"
+                    variation="primary-fill"
+                  >
+                    Visit the U.S. GHG Center website
+                  </Button>
+                </div>
+              </InfoImageContent>
+              <CollaboratorsContent>
+                <VarHeading size="small">
+                  Joining forces <span>for a better tomorrow</span>
+                </VarHeading>
+                <p>
+                  The Earth Information Center is grateful for the support and
+                  expertise of our valued, multi-agency collaborators: EPA,
+                  FEMA, NASA, NOAA, USAID, USDA, and USGS.
+                </p>
+                <Partners size="small" />
+                <Button
+                  forwardedAs={NavLink}
+                  to="https://hub.ghg.center/hub/" //@TODO: THIS NEEDS TO BE REPLACED
+                  size="medium"
+                  radius="square"
+                  variation="primary-fill"
+                >
+                  Learn more
+                </Button>
+              </CollaboratorsContent>
+            </BottomContent>
+          </FoldBody>
+        </Fold>
       </ContentContainer>
     </>
   );
