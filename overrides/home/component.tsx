@@ -4,9 +4,16 @@ import styled from "$veda-ui/styled-components";
 import { glsp, themeVal, media } from "$veda-ui/@devseed-ui/theme-provider";
 import { Button } from "$veda-ui/@devseed-ui/button";
 import Hug from "$veda-ui-scripts/styles/hug";
+import {
+  Fold,
+  FoldHeader,
+  FoldTitle,
+  FoldBody,
+  FoldHeadline,
+  FoldHeadActions,
+} from "$veda-ui-scripts/components/common/fold";
 import { VarHeading } from "$veda-ui-scripts/styles/variable-components";
 import { variableGlsp } from "$veda-ui-scripts/styles/variable-utils";
-import Image from "$veda-ui-scripts/components/common/blocks/images";
 import ThemeCards from "../components/theme-cards";
 import { themeLandingPageIds } from "../common/story-data";
 import { ExpandLink } from "./expand-link";
@@ -50,17 +57,6 @@ const ContentContainer = styled.div`
   background-image: linear-gradient(#ffffff, #edf3fc);
 `;
 
-const ThemeContent = styled.div`
-  display: flex;
-  flex-flow: column;
-  padding: ${glsp(3, 2, 1, 2)};
-  div {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-  }
-`;
-
 const BottomContent = styled(Hug)`
   display: flex;
   flex-flow: column;
@@ -73,10 +69,8 @@ const BottomContent = styled(Hug)`
   }
 
   ${media.largeDown`
-    padding: ${glsp(0, 2)};
     width: 100%;
     margin: 0;
-
     p {
       width: 100%;
     }
@@ -126,6 +120,12 @@ const CollaboratorsContent = styled.div`
   }
 `;
 
+export const FoldTitleWOAccent = styled(FoldTitle)`
+  &::before {
+    content: none;
+  }
+`;
+
 export default function HomeComponent() {
   const description =
     "The Earth Information Center consolidates data and insights on how Earth is changing from across the U.S. federal government. Discover how this data is being used to prepare for climate change, and mitigate, adapt, and respond to environmental challenges accross the country.";
@@ -145,68 +145,82 @@ export default function HomeComponent() {
         </IntroHeadline>
       </HomeDescription>
       <ContentContainer>
-        <ThemeContent>
-          <div>
-            <VarHeading size="large">Nine themes, one Earth</VarHeading>
-            <Button
+        <Fold>
+          <FoldHeader>
+            <FoldHeadline>
+              <FoldTitleWOAccent size="large">
+                Nine themes, one Earth
+              </FoldTitleWOAccent>
+            </FoldHeadline>
+            <FoldHeadActions>
+              <Button
                 forwardedAs={Link}
                 to="/stories" //@TODO: THIS NEEDS TO BE REPLACED
                 size="medium"
                 radius="square"
                 variation="primary-fill"
               >
-              View all themes
-            </Button>
-          </div>
+                View all themes
+              </Button>
+            </FoldHeadActions>
+          </FoldHeader>
+
           <ThemeCards storyIds={themeLandingPageIds} />
-        </ThemeContent>
-        <BottomContent>
-          <p>
-            Earth.gov is also the gateway to other interagency cooperative
-            efforts for our planet, like the{" "}
-            <ExpandLink href={`https://ghg.center/`}>
-              U.S. Greenhouse Gas Center
-            </ExpandLink>
-          </p>
-          <InfoImageContent>
-            <div>
-              <VarHeading size="small">U.S. Greenhouse Gas Center</VarHeading>
-              <span>
-                Uniting Data and Technology to Empower Tomorrow's Climate
-                Solutions
-              </span>
-              <Button
+        </Fold>
+        <Fold>
+          <FoldBody>
+            <BottomContent>
+              <p>
+                Earth.gov is also the gateway to other interagency cooperative
+                efforts for our planet, like the{" "}
+                <ExpandLink to={`https://ghg.center/`}>
+                  {" "}
+                  U.S. Greenhouse Gas Center
+                </ExpandLink>
+              </p>
+              <InfoImageContent>
+                <div>
+                  <VarHeading size="small">
+                    U.S. Greenhouse Gas Center
+                  </VarHeading>
+                  <span>
+                    Uniting Data and Technology to Empower Tomorrow's Climate
+                    Solutions
+                  </span>
+                  <Button
+                    forwardedAs="a"
+                    href="https://hub.ghg.center/hub/" //@TODO: This isn't working with external link
+                    size="medium"
+                    radius="square"
+                    variation="primary-fill"
+                  >
+                    Visit the U.S. GHG Center website
+                  </Button>
+                </div>
+              </InfoImageContent>
+              <CollaboratorsContent>
+                <VarHeading size="small">
+                  Joining forces <span>for a better tomorrow</span>
+                </VarHeading>
+                <p>
+                  The Earth Information Center is grateful for the support and
+                  expertise of our valued, multi-agency collaborators: EPA,
+                  FEMA, NASA, NOAA, USAID, USDA, and USGS.
+                </p>
+                <Partners size="small" />
+                <Button
                   forwardedAs="a"
-                  href="https://ghg.center/"
+                  href="https://ghg.center/" //@TODO: THIS NEEDS TO BE REPLACED
                   size="medium"
                   radius="square"
                   variation="primary-fill"
                 >
-                  Visit the U.S. GHG Center website
+                  Learn more
                 </Button>
-            </div>
-          </InfoImageContent>
-          <CollaboratorsContent>
-            <VarHeading size="small">
-              Joining forces <span>for a better tomorrow</span>
-            </VarHeading>
-            <p>
-              The Earth Information Center is grateful for the support and
-              expertise of our valued, multi-agency collaborators: EPA, FEMA,
-              NASA, NOAA, USAID, USDA, and USGS.
-            </p>
-            <Partners size="small" />
-            <Button
-                forwardedAs="a"
-                href="https://ghg.center/" //@TODO: THIS NEEDS TO BE REPLACED
-                size="medium"
-                radius="square"
-                variation="primary-fill"
-              >
-              Learn more
-            </Button>
-          </CollaboratorsContent>
-        </BottomContent>
+              </CollaboratorsContent>
+            </BottomContent>
+          </FoldBody>
+        </Fold>
       </ContentContainer>
     </>
   );
