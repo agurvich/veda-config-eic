@@ -3,7 +3,7 @@ import styled from "$veda-ui/styled-components";
 import { glsp, themeVal } from "$veda-ui/@devseed-ui/theme-provider";
 import { Link } from "$veda-ui/react-router-dom";
 
-import BrandLogo from "./logo.png";
+import BrandLogo from "./logo.svg";
 
 const Brand = styled.div`
   position: relative;
@@ -21,16 +21,7 @@ const Brand = styled.div`
 `;
 
 const Logo = styled.div`
-  display: flex;
-  flex-flow: column;
-  padding: ${glsp(0.5, 0.875)};
-  width: 6rem;
-  span {
-    font-weight: ${themeVal("type.base.bold")};
-    letter-spacing: -0.025em;
-    font-size: 1rem;
-    line-height: 1.125rem;
-  }
+  width: 9rem;
 `;
 
 export default function HeaderComponent() {
@@ -48,10 +39,7 @@ export default function HeaderComponent() {
     <Brand>
       <Link to="/">
         <Logo>
-          <img
-            src={BrandLogo}
-            alt="brand logo"
-          />
+          <img src={BrandLogo} alt="Earth.gov" />
         </Logo>
       </Link>
     </Brand>

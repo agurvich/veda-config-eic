@@ -21,14 +21,15 @@ import { ExpandLink } from "./expand-link";
 import Partners from "./partners";
 import RedEarthImg from "./media/earth-1.png";
 
-const IntroHeadline = styled.div`
+const IntroHeadline = styled(Hug)`
   display: flex;
-  flex-flow: row;
+  flex-flow: column;
   gap: ${glsp(2)};
   grid-column: content-start / content-end;
 
   ${media.largeUp`
     grid-column: content-2 / content-12;
+    flex-flow: row;
   `}
 
   p {
@@ -50,11 +51,25 @@ const HomeDescription = styled(Hug)`
     grid-row-gap: ${variableGlsp(3)};
   `}
 `;
+const IntroDesc = styled.div`
+  ${media.largeUp`
+    grid-column: -1/1;
+  `}
+`;
 
 const ContentContainer = styled.div`
-  display: flex;
-  flex-flow: column;
-  background-image: linear-gradient(#ffffff, #edf3fc);
+  background-image: linear-gradient(
+    ${themeVal("color.surface")} 0%,
+    ${themeVal("color.info-50")} 100%
+  );
+`;
+
+const GradientWrapper = styled.div`
+  background-image: linear-gradient(
+    ${themeVal("color.info-50")} 0%,
+    ${themeVal("color.info-100")} 60%,
+    ${themeVal("color.surface")} 60%
+  );
 `;
 
 const BottomContent = styled(Hug)`
@@ -63,7 +78,6 @@ const BottomContent = styled(Hug)`
   width: 80%;
   margin: auto;
   gap: ${glsp()};
-
   p {
     width: 60%;
   }
@@ -103,7 +117,6 @@ const InfoImageContent = styled.div`
 const CollaboratorsContent = styled.div`
   display: flex;
   flex-flow: column;
-  margin: ${glsp(4, 0)};
   align-items: center;
   gap: ${glsp()};
 
@@ -133,14 +146,14 @@ export default function HomeComponent() {
     <>
       <HomeDescription>
         <IntroHeadline>
-          <div>
+          <IntroDesc>
             <VarHeading size="xlarge">
               Multiple agencies,
               <br /> many interconnected systems, <br />
               <span>one planet.</span>
             </VarHeading>
             <p>{description}</p>
-          </div>
+          </IntroDesc>
           <Partners size="small" />
         </IntroHeadline>
       </HomeDescription>
@@ -167,6 +180,8 @@ export default function HomeComponent() {
 
           <ThemeCards storyIds={themeLandingPageIds} />
         </Fold>
+      </ContentContainer>
+      <GradientWrapper>
         <Fold>
           <FoldBody>
             <BottomContent>
@@ -198,30 +213,34 @@ export default function HomeComponent() {
                   </Button>
                 </div>
               </InfoImageContent>
-              <CollaboratorsContent>
-                <VarHeading size="small">
-                  Joining forces <span>for a better tomorrow</span>
-                </VarHeading>
-                <p>
-                  The Earth Information Center is grateful for the support and
-                  expertise of our valued, multi-agency collaborators: EPA,
-                  FEMA, NASA, NOAA, USAID, USDA, and USGS.
-                </p>
-                <Partners size="small" />
-                <Button
-                  forwardedAs="a"
-                  href="https://ghg.center/" //@TODO: THIS NEEDS TO BE REPLACED
-                  size="medium"
-                  radius="square"
-                  variation="primary-fill"
-                >
-                  Learn more
-                </Button>
-              </CollaboratorsContent>
             </BottomContent>
           </FoldBody>
         </Fold>
-      </ContentContainer>
+      </GradientWrapper>
+      <Fold>
+        <FoldBody>
+          <CollaboratorsContent>
+            <VarHeading size="small">
+              Joining forces <span>for a better tomorrow</span>
+            </VarHeading>
+            <p>
+              The Earth Information Center is grateful for the support and
+              expertise of our valued, multi-agency collaborators: EPA, FEMA,
+              NASA, NOAA, USAID, USDA, and USGS.
+            </p>
+            <Partners size="small" />
+            <Button
+              forwardedAs="a"
+              href="https://ghg.center/" //@TODO: THIS NEEDS TO BE REPLACED
+              size="medium"
+              radius="square"
+              variation="primary-fill"
+            >
+              Learn more
+            </Button>
+          </CollaboratorsContent>
+        </FoldBody>
+      </Fold>
     </>
   );
 }

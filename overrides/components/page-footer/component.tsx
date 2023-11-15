@@ -25,6 +25,7 @@ import {
 import { useFeedbackModal } from "$veda-ui-scripts/components/common/layout-root";
 import { useMediaQuery } from "$veda-ui-scripts/utils/use-media-query";
 import Partners from "../../home/partners";
+import BrandLogo from "../header-brand/logo.svg";
 
 const FooterInner = styled.div`
   display: flex;
@@ -59,7 +60,7 @@ const FooterMenu = styled.ul`
 `;
 
 const FooterMenuLink = styled(NavLink)`
-  font-weight: ${themeVal("type.base.regular")};
+  font-weight: ${themeVal("type.base.medium")};
   text-decoration: none;
   font-size: 0.875rem;
   text-transform: ${themeVal("button.type.case")};
@@ -86,15 +87,24 @@ const CreditsInfo = styled.div`
   display: flex;
   flex-flow: column;
   gap: ${glsp(0.25)};
+  p {
+    text-align: right;
+  }
 `;
 
 const TintBox = styled.div`
   display: flex;
   justify-content: flex-end;
   filter: grayscale(100%);
+  padding: ${glsp(1)};
   ${media.smallDown`
     justify-content: center;
   `}
+`;
+const LogoWrapper = styled.div`
+  width: 9rem;
+  filter: invert(80%);
+  margin-bottom: ${glsp(0.75)};
 `;
 
 const ModalBodyInner = styled.div`
@@ -258,31 +268,41 @@ export default function PageFooter(props) {
                 </li>
               )}
               <li>
+                <FooterMenuLink to="/visit">Visit the center</FooterMenuLink>
+              </li>
+              <li>
+                <FooterMenuLink to="/teach">Teach</FooterMenuLink>
+              </li>
+              <li>
                 <FooterMenuLink to={ABOUT_PATH}>About</FooterMenuLink>
               </li>
               <li>
-                {isMediumUp ? (
-                  <Button
-                    variation="primary-outline"
-                    size="large"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      show();
-                    }}
-                  >
-                    Contact Us
-                  </Button>
+                {process.env.GOOGLE_FORM ? (
+                  isMediumUp ? (
+                    <Button
+                      variation="primary-outline"
+                      size="large"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        show();
+                      }}
+                    >
+                      Contact Us
+                    </Button>
+                  ) : (
+                    <FooterMenuLink
+                      as="a"
+                      href="#"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        show();
+                      }}
+                    >
+                      Contact Us
+                    </FooterMenuLink>
+                  )
                 ) : (
-                  <FooterMenuLink
-                    as="a"
-                    href="#"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      show();
-                    }}
-                  >
-                    Contact Us
-                  </FooterMenuLink>
+                  false
                 )}
               </li>
             </FooterMenu>
@@ -291,7 +311,11 @@ export default function PageFooter(props) {
         <FooterContacts>
           <div>
             <a href="/">
-              <span>By</span> <strong>{process.env.APP_TITLE}</strong> <span>on</span>{" "}
+              <LogoWrapper>
+                <img src={BrandLogo} alt="Earth.gov" />
+              </LogoWrapper>
+              <span>By</span> <strong>{process.env.APP_TITLE}</strong>{" "}
+              <span>on</span>{" "}
               <time dateTime={String(nowDate.getFullYear())}>
                 {nowDate.getFullYear()}
               </time>
@@ -312,11 +336,7 @@ export default function PageFooter(props) {
             </TintBox>
             <p>
               {process.env.APP_TITLE} Responsible Official:{" "}
-              <a
-                href=""
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href="" target="_blank" rel="noopener noreferrer">
                 <strong>Pleaceholder</strong>
               </a>
             </p>

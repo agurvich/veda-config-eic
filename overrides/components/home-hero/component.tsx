@@ -1,49 +1,26 @@
 import React from "$veda-ui/react";
 import styled from "$veda-ui/styled-components";
-import { glsp, themeVal } from "$veda-ui/@devseed-ui/theme-provider";
-
+import { glsp, themeVal, media } from "$veda-ui/@devseed-ui/theme-provider";
+// import { Fold,  } from "$veda-ui-scripts/components/common/fold";
 import Constrainer from "$veda-ui-scripts/styles/constrainer";
 import { VarHeading } from "$veda-ui-scripts/styles/variable-components";
 
-import { useMediaQuery } from "$veda-ui-scripts/utils/use-media-query";
-
 import coverImgSrc from "./earth.png";
-import infoIcon from "./info-icon.svg";
-import Image from "$veda-ui-scripts/components/common/blocks/images";
+
+import {
+  Figcaption,
+  Figure,
+  FigureAttribution,
+} from "$veda-ui-scripts/components/common/figure";
 
 const Hero = styled.div`
   background: ${themeVal("color.primary")};
   color: ${themeVal("color.surface")};
-  padding: ${glsp(3, 0, 0, 0)};
 `;
 
 const PageHeroHGroup = styled.div`
   grid-column: 1 / -1;
   display: flex;
-  flex-flow: row;
-  gap: ${glsp(8)};
-  align-items: center;
-  justify-content: space-between;
-
-  div {
-    display: flex;
-    flex-flow: row;
-    gap: ${glsp(8)};
-    align-items: center;
-  }
-
-  button {
-    background-color: transparent;
-    border: none;
-    margin: 0;
-    padding: 0;
-    text-align: inherit;
-    font: inherit;
-    border-radius: 0;
-    appearance: none;
-    align-self: flex-end;
-    padding-bottom: 1rem;
-  }
 `;
 
 const HeroHeadline = styled.div`
@@ -54,30 +31,57 @@ const HeroHeadline = styled.div`
   align-items: center;
 `;
 
-export default function HomeHero(props) {
-  const { isMediumUp } = useMediaQuery();
+const HeroBody = styled.div`
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-bottom: ${glsp(2)};
+  background-image: url(${coverImgSrc});
+  background-repeat: no-repeat;
+  background-position: right 6rem bottom 0;
+  background-size: auto 10rem;
+  ${media.mediumDown`
+    background-size: auto 8rem;
+    background-position: right bottom;
+  `}
+`;
 
+const PageHeroAttribution = styled(Figure)`
+  height: 10rem;
+  width: 80px;
+  ${media.mediumDown`
+    height: 8rem;
+  `}
+`;
+const VarHeadingWithShadow = styled(VarHeading)`
+  text-shadow: 1px 1px ${themeVal('color.base-200a')};
+`
+export default function HomeHero(props) {
   const infoOnClick = () => {
-    return
-  }
+    return;
+  };
 
   return (
     <Hero>
       <Constrainer>
-        <PageHeroHGroup>
-          <HeroHeadline>
-            <VarHeading size="large">Explore our changing planet</VarHeading>
-          </HeroHeadline>
-          <div>
-            <img
-              src={coverImgSrc}
-              alt="image of planet"
-            />
-            <button id="home-hero-info-icon">
-              <Image src={infoIcon} alt="information" />
-            </button>
-          </div>
-        </PageHeroHGroup>
+        <HeroBody>
+          <PageHeroHGroup>
+            <HeroHeadline>
+              <VarHeadingWithShadow size="large">Explore our changing planet</VarHeadingWithShadow>
+            </HeroHeadline>
+          </PageHeroHGroup>
+          <PageHeroAttribution>
+            <Figcaption>
+              <FigureAttribution
+                author="NASA's Scientific Visualization Studio. Visualization of January 2021 Global Atmospheric Carbon Dioxide (CO₂)"
+                url="https://svs.gsfc.nasa.gov/5115"
+                position="bottom-right"
+              />
+            </Figcaption>
+          </PageHeroAttribution>
+        </HeroBody>
       </Constrainer>
     </Hero>
   );
