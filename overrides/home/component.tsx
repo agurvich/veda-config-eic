@@ -154,7 +154,7 @@ export default function HomeComponent() {
             </FoldHeadline>
             <FoldHeadActions>
               <Button
-                forwardedAs={NavLink}
+                forwardedAs={Link}
                 to="/stories" //@TODO: THIS NEEDS TO BE REPLACED
                 size="medium"
                 radius="square"
@@ -188,8 +188,8 @@ export default function HomeComponent() {
                     Solutions
                   </span>
                   <Button
-                    forwardedAs={NavLink}
-                    to="https://hub.ghg.center/hub/" //@TODO: This isn't working with external link
+                    forwardedAs="a"
+                    href="https://hub.ghg.center/hub/" //@TODO: This isn't working with external link
                     size="medium"
                     radius="square"
                     variation="primary-fill"
