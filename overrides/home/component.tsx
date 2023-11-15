@@ -1,5 +1,5 @@
 import React from "$veda-ui/react";
-import { NavLink } from "$veda-ui/react-router-dom";
+import { Link } from "$veda-ui/react-router-dom";
 import styled from "$veda-ui/styled-components";
 import { glsp, themeVal, media } from "$veda-ui/@devseed-ui/theme-provider";
 import { Button } from "$veda-ui/@devseed-ui/button";
@@ -97,8 +97,8 @@ const InfoImageContent = styled.div`
     display: flex;
     flex-flow: column;
     gap: ${glsp()};
-    margin: auto;
     padding-left: ${glsp(3)};
+    justify-content: center;
   }
 
   a {
@@ -149,12 +149,12 @@ export default function HomeComponent() {
           <div>
             <VarHeading size="large">Nine themes, one Earth</VarHeading>
             <Button
-              forwardedAs={NavLink}
-              to="/stories" //@TODO: THIS NEEDS TO BE REPLACED
-              size="medium"
-              radius="square"
-              variation="primary-fill"
-            >
+                forwardedAs={Link}
+                to="/stories" //@TODO: THIS NEEDS TO BE REPLACED
+                size="medium"
+                radius="square"
+                variation="primary-fill"
+              >
               View all themes
             </Button>
           </div>
@@ -164,8 +164,7 @@ export default function HomeComponent() {
           <p>
             Earth.gov is also the gateway to other interagency cooperative
             efforts for our planet, like the{" "}
-            <ExpandLink to={`https://ghg.center/`}>
-              {" "}
+            <ExpandLink href={`https://ghg.center/`}>
               U.S. Greenhouse Gas Center
             </ExpandLink>
           </p>
@@ -177,14 +176,14 @@ export default function HomeComponent() {
                 Solutions
               </span>
               <Button
-                forwardedAs={NavLink}
-                to="https://hub.ghg.center/hub/" //@TODO: This isn't working with external link
-                size="medium"
-                radius="square"
-                variation="primary-fill"
-              >
-                Visit the U.S. GHG Center website
-              </Button>
+                  forwardedAs="a"
+                  href="https://ghg.center/"
+                  size="medium"
+                  radius="square"
+                  variation="primary-fill"
+                >
+                  Visit the U.S. GHG Center website
+                </Button>
             </div>
           </InfoImageContent>
           <CollaboratorsContent>
@@ -198,12 +197,12 @@ export default function HomeComponent() {
             </p>
             <Partners size="small" />
             <Button
-              forwardedAs={NavLink}
-              to="https://hub.ghg.center/hub/" //@TODO: THIS NEEDS TO BE REPLACED
-              size="medium"
-              radius="square"
-              variation="primary-fill"
-            >
+                forwardedAs="a"
+                href="https://ghg.center/" //@TODO: THIS NEEDS TO BE REPLACED
+                size="medium"
+                radius="square"
+                variation="primary-fill"
+              >
               Learn more
             </Button>
           </CollaboratorsContent>
