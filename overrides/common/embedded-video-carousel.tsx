@@ -144,7 +144,7 @@ export default function Carousel({ items }: EmbeddedVideosPropType) {
                       title={t.title}
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       allowfullscreen
-                    ></Embed>
+                    />
                     <DescWrapper>
                       <h3>{t.title}</h3>
                       <p>{t.caption}</p>
