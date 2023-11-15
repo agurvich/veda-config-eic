@@ -4,9 +4,15 @@ import styled from "$veda-ui/styled-components";
 import { glsp, themeVal, media } from "$veda-ui/@devseed-ui/theme-provider";
 import { Button } from "$veda-ui/@devseed-ui/button";
 import Hug from "$veda-ui-scripts/styles/hug";
+import {
+  Fold,
+  FoldHeader,
+  FoldTitle,
+  FoldHeadline,
+  FoldHeadActions,
+} from "$veda-ui-scripts/components/common/fold";
 import { VarHeading } from "$veda-ui-scripts/styles/variable-components";
 import { variableGlsp } from "$veda-ui-scripts/styles/variable-utils";
-import Image from "$veda-ui-scripts/components/common/blocks/images";
 import ThemeCards from "../components/theme-cards";
 import { themeLandingPageIds } from "../common/story-data";
 import { ExpandLink } from "./expand-link";
@@ -48,17 +54,6 @@ const ContentContainer = styled.div`
   display: flex;
   flex-flow: column;
   background-image: linear-gradient(#ffffff, #edf3fc);
-`;
-
-const ThemeContent = styled.div`
-  display: flex;
-  flex-flow: column;
-  padding: ${glsp(3, 2, 1, 2)};
-  div {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-  }
 `;
 
 const BottomContent = styled(Hug)`
@@ -126,6 +121,12 @@ const CollaboratorsContent = styled.div`
   }
 `;
 
+export const FoldTitleWOAccent = styled(FoldTitle)`
+  &::before {
+    content: none;
+  }
+`;
+
 export default function HomeComponent() {
   const description =
     "The Earth Information Center consolidates data and insights on how Earth is changing from across the U.S. federal government. Discover how this data is being used to prepare for climate change, and mitigate, adapt, and respond to environmental challenges accross the country.";
@@ -145,21 +146,26 @@ export default function HomeComponent() {
         </IntroHeadline>
       </HomeDescription>
       <ContentContainer>
-        <ThemeContent>
-          <div>
-            <VarHeading size="large">Nine themes, one Earth</VarHeading>
-            <Button
-              forwardedAs={NavLink}
-              to="/stories" //@TODO: THIS NEEDS TO BE REPLACED
-              size="medium"
-              radius="square"
-              variation="primary-fill"
-            >
-              View all themes
-            </Button>
-          </div>
+        <Fold>
+          <FoldHeader>
+            <FoldHeadline>
+              <FoldTitleWOAccent size="large">Nine themes, one Earth</FoldTitleWOAccent>
+            </FoldHeadline>
+            <FoldHeadActions>
+              <Button
+                forwardedAs={NavLink}
+                to="/stories" //@TODO: THIS NEEDS TO BE REPLACED
+                size="medium"
+                radius="square"
+                variation="primary-fill"
+              >
+                View all themes
+              </Button>
+            </FoldHeadActions>
+          </FoldHeader>
+
           <ThemeCards storyIds={themeLandingPageIds} />
-        </ThemeContent>
+        </Fold>
         <BottomContent>
           <p>
             Earth.gov is also the gateway to other interagency cooperative
