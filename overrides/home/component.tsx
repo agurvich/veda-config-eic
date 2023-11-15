@@ -7,6 +7,9 @@ import Hug from "$veda-ui-scripts/styles/hug";
 import { VarHeading } from "$veda-ui-scripts/styles/variable-components";
 import { variableGlsp } from "$veda-ui-scripts/styles/variable-utils";
 import Image from "$veda-ui-scripts/components/common/blocks/images";
+import ThemeCards from '../components/theme-cards';
+import { themeLandingPageIds } from "../common/story-data";
+import { ExpandLink } from "./expand-link";
 
 import Partners from "./partners";
 import RedEarthImg from "./media/earth-1.png";
@@ -49,8 +52,7 @@ const ContentContainer = styled.div`
 
 const ThemeContent = styled.div`
   display: flex;
-  flex-flow: row;
-  gap: ${glsp(8)};
+  flex-flow: column;
   padding: ${glsp(3, 2, 1, 2)};
   div {
     display: flex;
@@ -59,16 +61,27 @@ const ThemeContent = styled.div`
   }
 `;
 
-const BottomContent = styled.div`
+const BottomContent = styled(Hug)`
   display: flex;
   flex-flow: column;
   width: 80%;
   margin: auto;
   gap: ${glsp()};
+
   p {
     width: 60%;
   }
-`
+
+  ${media.largeDown`
+    padding: ${glsp(0, 2)};
+    width: 100%;
+    margin: 0;
+
+    p {
+      width: 100%;
+    }
+  `}
+`;
 
 const InfoImageContent = styled.div`
   display: flex;
@@ -133,12 +146,21 @@ export default function HomeComponent() {
             <VarHeading size="large">
               Nine themes, one Earth
             </VarHeading>
+            <Button
+                forwardedAs={NavLink}
+                to="/stories" //@TODO: THIS NEEDS TO BE REPLACED
+                size="medium"
+                radius="square"
+                variation="primary-fill"
+              >
+              View all themes
+            </Button>
           </div>
-            {/* {PlaceHolder for Cards} */}
+          <ThemeCards storyIds={themeLandingPageIds} />
         </ThemeContent>
         <BottomContent>
             <p>
-              Earth.gov is also the gateway to other interagency cooperative efforts for our planet, like the <a href="https://hub.ghg.center/hub/">U.S. Greenhouse Gas Center</a>
+              Earth.gov is also the gateway to other interagency cooperative efforts for our planet, like the <ExpandLink to={`https://ghg.center/`}> U.S. Greenhouse Gas Center</ExpandLink>
             </p>
             <InfoImageContent>
               <div>
