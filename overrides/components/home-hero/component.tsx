@@ -1,9 +1,8 @@
 import React from "$veda-ui/react";
 import styled from "$veda-ui/styled-components";
 import { glsp, themeVal, media } from "$veda-ui/@devseed-ui/theme-provider";
-// import { Fold,  } from "$veda-ui-scripts/components/common/fold";
 import Constrainer from "$veda-ui-scripts/styles/constrainer";
-import { VarHeading } from "$veda-ui-scripts/styles/variable-components";
+import { StyledVarHeading } from "../../common/style";
 
 import coverImgSrc from "./earth.png";
 
@@ -56,7 +55,7 @@ const PageHeroAttribution = styled(Figure)`
     margin-bottom: ${glsp(-1)};
   `}
 `;
-const VarHeadingWithShadow = styled(VarHeading)`
+const VarHeadingWithShadow = styled(StyledVarHeading)`
   text-shadow: 1px 1px ${themeVal("color.base-200a")};
 `;
 export default function HomeHero(props) {
@@ -77,7 +76,7 @@ export default function HomeHero(props) {
           </PageHeroHGroup>
           <PageHeroAttribution>
             <Figcaption>
-              <img src={coverImgSrc} />
+              <img src={coverImgSrc} alt="Earth Image for hero" />
               <FigureAttribution
                 author="NASA's Scientific Visualization Studio. Visualization of January 2021 Global Atmospheric Carbon Dioxide (CO₂)"
                 url="https://svs.gsfc.nasa.gov/5115"
