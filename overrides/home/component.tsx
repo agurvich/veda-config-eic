@@ -12,7 +12,7 @@ import {
   FoldHeadline,
   FoldHeadActions,
 } from "$veda-ui-scripts/components/common/fold";
-import { VarHeading } from "$veda-ui-scripts/styles/variable-components";
+import { StyledVarHeading } from "../common/style";
 import { variableGlsp } from "$veda-ui-scripts/styles/variable-utils";
 import ThemeCards from "../components/theme-cards";
 import { themeLandingPageIds } from "../common/story-data";
@@ -133,12 +133,6 @@ const CollaboratorsContent = styled.div`
   }
 `;
 
-export const FoldTitleWOAccent = styled(FoldTitle)`
-  &::before {
-    content: none;
-  }
-`;
-
 export default function HomeComponent() {
   const description =
     "The Earth Information Center consolidates data and insights on how Earth is changing from across the U.S. federal government. Discover how this data is being used to prepare for climate change, and mitigate, adapt, and respond to environmental challenges accross the country.";
@@ -147,11 +141,11 @@ export default function HomeComponent() {
       <HomeDescription>
         <IntroHeadline>
           <IntroDesc>
-            <VarHeading size="xlarge" as="h1">
+            <StyledVarHeading size="xlarge" as="h1">
               Multiple agencies,
               <br /> many interconnected systems, <br />
               <span>one planet.</span>
-            </VarHeading>
+            </StyledVarHeading>
             <p>{description}</p>
           </IntroDesc>
           <Partners size="small" />
@@ -161,9 +155,9 @@ export default function HomeComponent() {
         <Fold>
           <FoldHeader>
             <FoldHeadline>
-              <FoldTitleWOAccent size="large">
+              <StyledVarHeading as="h2" size="large">
                 Nine themes, one Earth
-              </FoldTitleWOAccent>
+              </StyledVarHeading>
             </FoldHeadline>
             <FoldHeadActions>
               <Button
@@ -195,9 +189,9 @@ export default function HomeComponent() {
               </p>
               <InfoImageContent>
                 <div>
-                  <VarHeading size="small" as="h2">
+                  <StyledVarHeading size="small" as="h2">
                     U.S. Greenhouse Gas Center
-                  </VarHeading>
+                  </StyledVarHeading>
                   <span>
                     Uniting Data and Technology to Empower Tomorrow's Climate
                     Solutions
@@ -220,9 +214,9 @@ export default function HomeComponent() {
       <Fold>
         <FoldBody>
           <CollaboratorsContent>
-            <VarHeading size="small" as="h2">
+            <StyledVarHeading size="small" as="h2">
               Joining forces <span>for a better tomorrow</span>
-            </VarHeading>
+            </StyledVarHeading>
             <p>
               The Earth Information Center is grateful for the support and
               expertise of our valued, multi-agency collaborators: EPA, FEMA,
