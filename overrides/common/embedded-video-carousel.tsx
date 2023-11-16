@@ -71,6 +71,7 @@ const ButtonGroup = styled.div`
   top: calc(${(props) => props.topHeight}px + ${glsp(4)});
   left: unset;
   align-items: center;
+  z-index: 5;
 `;
 
 const buttonStyle = createButtonStyles({
@@ -128,6 +129,30 @@ export default function Carousel({ items }: EmbeddedVideosPropType) {
         totalSlides={items.length}
         style={{ gridColumn: "1 / -1", gridRow: "2", position: "relative" }}
       >
+        {items.length > 1 && (
+          <ButtonGroup
+            topHeight={height}
+            role="group"
+            aria-label="Slide controls"
+          >
+            <ButtonBackStyled>
+              <CollecticonChevronLeft title="Go to previous slide" meaningful />
+            </ButtonBackStyled>
+            {/* A workaround to show current slide number/ total slide number */}
+            <DotGroup
+              renderDots={(props) => {
+                return (
+                  <span>
+                    {props.currentSlide + 1}/{items.length + 1}
+                  </span>
+                );
+              }}
+            />
+            <ButtonNextStyled>
+              <CollecticonChevronRight title="Go to next slide" meaningful />
+            </ButtonNextStyled>
+          </ButtonGroup>
+        )}
         <div role="region" aria-label="Carousel">
           <FeaturedList>
             <Slider>
@@ -151,38 +176,13 @@ export default function Carousel({ items }: EmbeddedVideosPropType) {
                       <p>{t.caption}</p>
                     </DescWrapper>
                   </Slide>
-                  <SROnly id={`carousel-item-${idx}__label`}>{t.title}</SROnly>
+                  <SROnly id={`carousel-item-${idx}__label`} aria-live="polite">
+                    {t.title}
+                  </SROnly>
                 </FeaturedContent>
               ))}
             </Slider>
           </FeaturedList>
-          {items.length > 1 && (
-            <ButtonGroup
-              topHeight={height}
-              role="group"
-              aria-label="Slide controls"
-            >
-              <ButtonBackStyled>
-                <CollecticonChevronLeft
-                  title="Go to previous slide"
-                  meaningful
-                />
-              </ButtonBackStyled>
-              {/* A workaround to show current slide number/ total slide number */}
-              <DotGroup
-                renderDots={(props) => {
-                  return (
-                    <span>
-                      {props.currentSlide + 1}/{items.length + 1}
-                    </span>
-                  );
-                }}
-              />
-              <ButtonNextStyled>
-                <CollecticonChevronRight title="Go to next slide" meaningful />
-              </ButtonNextStyled>
-            </ButtonGroup>
-          )}
         </div>
       </CarouselProvider>
     </Lazyload>
