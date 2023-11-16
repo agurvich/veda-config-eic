@@ -36,8 +36,8 @@ module.exports = {
 
   strings: {
     stories: {
-      one: "theme",
-      other: "themes",
+      one: "Theme",
+      other: "Themes",
     },
     storiesBanner: "Something related to themes.",
     dataCatalogBanner:
@@ -46,7 +46,7 @@ module.exports = {
 
   theme: {
     color: {
-      primary: "#082a64",
+      primary: "#0550D8",
       link: "#1565EF",
     },
     type: {
@@ -57,8 +57,8 @@ module.exports = {
     },
     button: {
       type: {
-        case: "uppercase",
-        weight: 400,
+        case: "none",
+        weight: 500,
       },
     },
   },

@@ -1,136 +1,246 @@
 import React from "$veda-ui/react";
-import { NavLink } from "$veda-ui/react-router-dom";
+import { Link } from "$veda-ui/react-router-dom";
 import styled from "$veda-ui/styled-components";
 import { glsp, themeVal, media } from "$veda-ui/@devseed-ui/theme-provider";
 import { Button } from "$veda-ui/@devseed-ui/button";
-import { CollecticonArrowRight } from "$veda-ui/@devseed-ui/collecticons";
 import Hug from "$veda-ui-scripts/styles/hug";
+import {
+  Fold,
+  FoldHeader,
+  FoldTitle,
+  FoldBody,
+  FoldHeadline,
+  FoldHeadActions,
+} from "$veda-ui-scripts/components/common/fold";
 import { VarHeading } from "$veda-ui-scripts/styles/variable-components";
 import { variableGlsp } from "$veda-ui-scripts/styles/variable-utils";
+import ThemeCards from "../components/theme-cards";
+import { themeLandingPageIds } from "../common/story-data";
+import { ExpandLink } from "./expand-link";
 
 import Partners from "./partners";
-import Keypoints from "./keypoints";
-import { ArrowLink } from "./arrow-link";
+import RedEarthImg from "./media/earth-1.png";
 
-const HomeContent = styled(Hug)`
-  padding: ${variableGlsp(2.5, 0)};
-  grid-row-gap: ${variableGlsp(2)};
-
-  ${media.mediumUp`
-    grid-row-gap: ${variableGlsp(3)};
-  `}
-`;
-
-const IntroHeadline = styled.div`
+const IntroHeadline = styled(Hug)`
   display: flex;
   flex-flow: column;
   gap: ${glsp(2)};
   grid-column: content-start / content-end;
 
-  ${media.mediumUp`
-    grid-column: content-2 / content-8;
-  `}
-
   ${media.largeUp`
-    grid-column: content-3 / content-11;
+    grid-column: content-2 / content-12;
+    flex-flow: row;
   `}
 
   p {
     font-size: 1.25rem;
+    padding-top: 1rem;
+  }
+
+  span {
+    color: ${themeVal("color.primary")};
   }
 `;
 
-const ActionsBlock = styled.div`
-  grid-column: 1 / -1;
-  display: flex;
-  justify-content: center;
-`;
-
-const InfoCallout = styled(Hug)`
-  background: ${themeVal("color.base-50")};
-  box-shadow: inset 0 -1px 0 0 ${themeVal("color.base-100a")};
+const HomeDescription = styled(Hug)`
   padding: ${variableGlsp(2.5, 0)};
-`;
-
-const InfoCalloutInner = styled.div`
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  gap: ${glsp(3)};
-  grid-column: content-start / content-end;
+  grid-row-gap: ${variableGlsp(2)};
+  background: ${themeVal("color.info-100")};
 
   ${media.mediumUp`
-    grid-column: content-2 /content-8;
-    text-align: center;
+    grid-row-gap: ${variableGlsp(3)};
   `}
-
+`;
+const IntroDesc = styled.div`
   ${media.largeUp`
-    grid-column: content-3 / content-11;
-    gap: ${glsp(3)};
+    grid-column: -1/1;
   `}
 `;
 
-const InfoCalloutHeadline = styled.div`
+const ContentContainer = styled.div`
+  background-image: linear-gradient(
+    ${themeVal("color.surface")} 0%,
+    ${themeVal("color.info-50")} 100%
+  );
+`;
+
+const GradientWrapper = styled.div`
+  background-image: linear-gradient(
+    ${themeVal("color.info-50")} 0%,
+    ${themeVal("color.info-100")} 60%,
+    ${themeVal("color.surface")} 60%
+  );
+`;
+
+const BottomContent = styled(Hug)`
   display: flex;
   flex-flow: column;
+  width: 80%;
+  margin: auto;
   gap: ${glsp()};
+  p {
+    width: 60%;
+  }
+
+  ${media.largeDown`
+    width: 100%;
+    margin: 0;
+    p {
+      width: 100%;
+    }
+  `}
+`;
+
+const InfoImageContent = styled.div`
+  display: flex;
+  flex-flow: row;
+  background-color: #02225b; // @TODO: But where can I get this color?
+  color: #ffffff;
+  width: 100%;
+  height: 350px;
+  background-image: url(${RedEarthImg});
+  background-position: right;
+  background-repeat: no-repeat;
+  div {
+    display: flex;
+    flex-flow: column;
+    gap: ${glsp()};
+    padding-left: ${glsp(3)};
+    justify-content: center;
+  }
+
+  a {
+    width: 18.5rem;
+  }
+`;
+
+const CollaboratorsContent = styled.div`
+  display: flex;
+  flex-flow: column;
   align-items: center;
+  gap: ${glsp()};
+
+  div {
+    margin: 1rem auto;
+  }
+
+  span {
+    color: ${themeVal("color.primary")};
+  }
 
   p {
-    font-size: 1rem;
+    text-align: center;
+  }
+`;
 
-    ${media.mediumUp`
-      font-size: 1.25rem;
-    `}
+export const FoldTitleWOAccent = styled(FoldTitle)`
+  &::before {
+    content: none;
   }
 `;
 
 export default function HomeComponent() {
+  const description =
+    "The Earth Information Center consolidates data and insights on how Earth is changing from across the U.S. federal government. Discover how this data is being used to prepare for climate change, and mitigate, adapt, and respond to environmental challenges accross the country.";
   return (
     <>
-      <HomeContent>
+      <HomeDescription>
         <IntroHeadline>
-          <VarHeading size="xxlarge">Welcome</VarHeading>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae tortor commodo lorem sodales rhoncus. Pellentesque eu elit hendrerit, tempus lectus vitae, sagittis ligula. Nullam ac massa et urna pulvinar varius vel id est. Suspendisse pharetra, odio ac finibus fringilla, mi urna porttitor sem, sed efficitur lectus enim sodales felis. Proin sapien nibh, euismod ac nulla at, blandit facilisis elit.
-          </p>
-          <ArrowLink to="/stories/intro-us-ghg-center">
-            Introduction to EIC
-          </ArrowLink>
-        </IntroHeadline>
-        {/* <Keypoints /> */}
-        <ActionsBlock>
-          <Button
-            forwardedAs={NavLink}
-            to="/data-catalog"
-            size="xlarge"
-            variation="primary-fill"
-          >
-            Browse the Data Catalog <CollecticonArrowRight />
-          </Button>
-        </ActionsBlock>
-      </HomeContent>
-      <InfoCallout>
-        <InfoCalloutInner>
-          <InfoCalloutHeadline>
+          <IntroDesc>
             <VarHeading size="xlarge">
-              Joining forces for a better future
+              Multiple agencies,
+              <br /> many interconnected systems, <br />
+              <span>one planet.</span>
+            </VarHeading>
+            <p>{description}</p>
+          </IntroDesc>
+          <Partners size="small" />
+        </IntroHeadline>
+      </HomeDescription>
+      <ContentContainer>
+        <Fold>
+          <FoldHeader>
+            <FoldHeadline>
+              <FoldTitleWOAccent size="large">
+                Nine themes, one Earth
+              </FoldTitleWOAccent>
+            </FoldHeadline>
+            <FoldHeadActions>
+              <Button
+                forwardedAs={Link}
+                to="/stories" //@TODO: THIS NEEDS TO BE REPLACED
+                size="medium"
+                radius="square"
+                variation="primary-fill"
+              >
+                View all themes
+              </Button>
+            </FoldHeadActions>
+          </FoldHeader>
+
+          <ThemeCards storyIds={themeLandingPageIds} />
+        </Fold>
+      </ContentContainer>
+      <GradientWrapper>
+        <Fold>
+          <FoldBody>
+            <BottomContent>
+              <p>
+                Earth.gov is also the gateway to other interagency cooperative
+                efforts for our planet, like the{" "}
+                <ExpandLink to={`https://ghg.center/`}>
+                  {" "}
+                  U.S. Greenhouse Gas Center
+                </ExpandLink>
+              </p>
+              <InfoImageContent>
+                <div>
+                  <VarHeading size="small">
+                    U.S. Greenhouse Gas Center
+                  </VarHeading>
+                  <span>
+                    Uniting Data and Technology to Empower Tomorrow's Climate
+                    Solutions
+                  </span>
+                  <Button
+                    forwardedAs="a"
+                    href="https://hub.ghg.center/hub/" //@TODO: This isn't working with external link
+                    size="medium"
+                    radius="square"
+                    variation="primary-fill"
+                  >
+                    Visit the U.S. GHG Center website
+                  </Button>
+                </div>
+              </InfoImageContent>
+            </BottomContent>
+          </FoldBody>
+        </Fold>
+      </GradientWrapper>
+      <Fold>
+        <FoldBody>
+          <CollaboratorsContent>
+            <VarHeading size="small">
+              Joining forces <span>for a better tomorrow</span>
             </VarHeading>
             <p>
-            Praesent pellentesque, tellus eget lobortis iaculis, mauris ante euismod quam, sit amet dignissim lorem est ac mauris. Etiam euismod fringilla laoreet. Nam quam erat, pellentesque non iaculis vel, dignissim ac tellus. Nam urna tortor, blandit vitae arcu sed, vestibulum ultrices urna.
+              The Earth Information Center is grateful for the support and
+              expertise of our valued, multi-agency collaborators: EPA, FEMA,
+              NASA, NOAA, USAID, USDA, and USGS.
             </p>
-          </InfoCalloutHeadline>
-          <Partners variation="positive" size="big" />
-          <Button
-            forwardedAs={NavLink}
-            to="/about"
-            size="xlarge"
-            variation="primary-outline"
-          >
-            Learn More <CollecticonArrowRight />
-          </Button>
-        </InfoCalloutInner>
-      </InfoCallout>
+            <Partners size="small" />
+            <Button
+              forwardedAs="a"
+              href="https://ghg.center/" //@TODO: THIS NEEDS TO BE REPLACED
+              size="medium"
+              radius="square"
+              variation="primary-fill"
+            >
+              Learn more
+            </Button>
+          </CollaboratorsContent>
+        </FoldBody>
+      </Fold>
     </>
   );
 }
