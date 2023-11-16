@@ -25,8 +25,12 @@ taxonomy:
     values:
       - Hyperwall
 ---
-
-import Carousel from './components/carousel.jsx';
+import Carousel from "../overrides/common/embedded-video-carousel";
 import contentArray from './locfeature.HYPER/carousel_content.json';
 
-<Carousel {...{contentArray}} />
+
+<Block type='wide'>
+  <Figure>
+    <Carousel items={contentArray} />
+  </Figure>
+</Block>
