@@ -70,6 +70,7 @@ const ButtonGroup = styled.div`
   gap: ${glsp(1)};
   top: calc(${(props) => props.topHeight}px + ${glsp(4)});
   left: unset;
+  align-items: center;
 `;
 
 const buttonStyle = createButtonStyles({
@@ -155,7 +156,6 @@ export default function Carousel({ items }: EmbeddedVideosPropType) {
               ))}
             </Slider>
           </FeaturedList>
-
           {items.length > 1 && (
             <ButtonGroup
               topHeight={height}
@@ -168,6 +168,16 @@ export default function Carousel({ items }: EmbeddedVideosPropType) {
                   meaningful
                 />
               </ButtonBackStyled>
+              {/* A workaround to show current slide number/ total slide number */}
+              <DotGroup
+                renderDots={(props) => {
+                  return (
+                    <span>
+                      {props.currentSlide + 1}/{items.length + 1}
+                    </span>
+                  );
+                }}
+              />
               <ButtonNextStyled>
                 <CollecticonChevronRight title="Go to next slide" meaningful />
               </ButtonNextStyled>
