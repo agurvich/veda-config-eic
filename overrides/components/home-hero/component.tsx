@@ -21,6 +21,9 @@ const Hero = styled.div`
 const PageHeroHGroup = styled.div`
   grid-column: 1 / -1;
   display: flex;
+  ${media.smallDown`
+    align-self: flex-start;
+  `}
 `;
 
 const HeroHeadline = styled.div`
@@ -38,26 +41,24 @@ const HeroBody = styled.div`
   align-items: flex-end;
   justify-content: space-between;
   padding-bottom: ${glsp(2)};
-  background-image: url(${coverImgSrc});
-  background-repeat: no-repeat;
-  background-position: right 6rem bottom 0;
-  background-size: auto 10rem;
-  ${media.mediumDown`
-    background-size: auto 8rem;
-    background-position: right bottom;
+  ${media.smallDown`
+    flex-direction: column;
   `}
 `;
 
 const PageHeroAttribution = styled(Figure)`
   height: 10rem;
-  width: 80px;
-  ${media.mediumDown`
+  width: 20rem;
+  max-width: 100%;
+  margin-bottom: ${glsp(-3)};
+  ${media.smallDown`
     height: 8rem;
+    margin-bottom: ${glsp(-1)};
   `}
 `;
 const VarHeadingWithShadow = styled(VarHeading)`
-  text-shadow: 1px 1px ${themeVal('color.base-200a')};
-`
+  text-shadow: 1px 1px ${themeVal("color.base-200a")};
+`;
 export default function HomeHero(props) {
   const infoOnClick = () => {
     return;
@@ -69,11 +70,14 @@ export default function HomeHero(props) {
         <HeroBody>
           <PageHeroHGroup>
             <HeroHeadline>
-              <VarHeadingWithShadow size="large">Explore our changing planet</VarHeadingWithShadow>
+              <VarHeadingWithShadow size="large">
+                Explore our changing planet
+              </VarHeadingWithShadow>
             </HeroHeadline>
           </PageHeroHGroup>
           <PageHeroAttribution>
             <Figcaption>
+              <img src={coverImgSrc} />
               <FigureAttribution
                 author="NASA's Scientific Visualization Studio. Visualization of January 2021 Global Atmospheric Carbon Dioxide (CO₂)"
                 url="https://svs.gsfc.nasa.gov/5115"
