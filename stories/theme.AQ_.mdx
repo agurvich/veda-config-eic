@@ -26,7 +26,7 @@ taxonomy:
 import CardGallery from "./components/card_gallery";
 import { airQualityStoryIds } from "../overrides/common/story-data";
 
-import Carousel from './components/carousel.jsx';
+import Carousel from "../overrides/common/embedded-video-carousel";
 import contentArray from './theme.AQ_.introduction_air_quality/carousel_content.json';
 
 <Block type='wide'>
@@ -91,7 +91,11 @@ import contentArray from './theme.AQ_.introduction_air_quality/carousel_content.
   </Figure>
 </Block>
 
-<Carousel contentArray={contentArray}/>
+<Block type='wide'>
+  <Figure>
+    <Carousel items={contentArray} />
+  </Figure>
+</Block>
 
 <Block>
   <Prose>

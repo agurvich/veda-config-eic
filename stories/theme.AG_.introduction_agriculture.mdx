@@ -22,7 +22,7 @@ taxonomy:
       - agriculture
 ---
 
-import Carousel from './components/carousel.jsx';
+import Carousel from "../overrides/common/embedded-video-carousel";
 import contentArray from './theme.AG_.introduction_agriculture/carousel_content.json';
 
 <Block type="wide">
@@ -47,7 +47,11 @@ import contentArray from './theme.AG_.introduction_agriculture/carousel_content.
   </Prose>
 </Block>
 
-<Carousel contentArray={contentArray}/>
+<Block type='wide'>
+  <Figure>
+    <Carousel items={contentArray} />
+  </Figure>
+</Block>
 
 <Block type="wide">
   <Prose>

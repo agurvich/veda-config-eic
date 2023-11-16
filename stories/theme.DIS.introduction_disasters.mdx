@@ -22,7 +22,7 @@ taxonomy:
       - disasters
 ---
 
-import Carousel from './components/carousel.jsx';
+import Carousel from "../overrides/common/embedded-video-carousel";
 import contentArray from './theme.DIS.introduction_disasters/carousel_content.json';
 
 <Block type="wide">
@@ -45,7 +45,11 @@ import contentArray from './theme.DIS.introduction_disasters/carousel_content.js
   </Prose>
 </Block>
 
-<Carousel {...{contentArray}} />
+<Block type='wide'>
+  <Figure>
+    <Carousel items={contentArray} />
+  </Figure>
+</Block>
 
 <Block type="wide">
   <Prose>

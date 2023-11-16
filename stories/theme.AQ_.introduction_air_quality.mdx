@@ -22,7 +22,7 @@ taxonomy:
       - "air quality"
 ---
 
-import Carousel from './components/carousel.jsx';
+import Carousel from "../overrides/common/embedded-video-carousel";
 import contentArray from './theme.AQ_.introduction_air_quality/carousel_content.json';
 
 
@@ -70,7 +70,11 @@ import contentArray from './theme.AQ_.introduction_air_quality/carousel_content.
   </Figure>
 </Block>
 
-<Carousel contentArray={contentArray}/>
+<Block type='wide'>
+  <Figure>
+    <Carousel items={contentArray} />
+  </Figure>
+</Block>
 
 <Block>
   <Prose>
