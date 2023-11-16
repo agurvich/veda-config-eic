@@ -77,7 +77,7 @@ export default function HomeHero(props) {
           </PageHeroHGroup>
           <PageHeroAttribution>
             <Figcaption>
-              <img src={coverImgSrc} />
+              <img src={coverImgSrc} alt="Earth Image for hero" />
               <FigureAttribution
                 author="NASA's Scientific Visualization Studio. Visualization of January 2021 Global Atmospheric Carbon Dioxide (CO₂)"
                 url="https://svs.gsfc.nasa.gov/5115"
