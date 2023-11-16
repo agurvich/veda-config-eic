@@ -147,7 +147,7 @@ export default function HomeComponent() {
       <HomeDescription>
         <IntroHeadline>
           <IntroDesc>
-            <VarHeading size="xlarge">
+            <VarHeading size="xlarge" as="h1">
               Multiple agencies,
               <br /> many interconnected systems, <br />
               <span>one planet.</span>
@@ -195,7 +195,7 @@ export default function HomeComponent() {
               </p>
               <InfoImageContent>
                 <div>
-                  <VarHeading size="small">
+                  <VarHeading size="small" as="h2">
                     U.S. Greenhouse Gas Center
                   </VarHeading>
                   <span>
@@ -220,7 +220,7 @@ export default function HomeComponent() {
       <Fold>
         <FoldBody>
           <CollaboratorsContent>
-            <VarHeading size="small">
+            <VarHeading size="small" as="h2">
               Joining forces <span>for a better tomorrow</span>
             </VarHeading>
             <p>
