@@ -136,8 +136,10 @@ export default function Carousel({ items }: EmbeddedVideosPropType) {
             <DotGroup
               renderDots={(props) => {
                 return (
-                  <span>
-                    {props.currentSlide + 1}/{items.length + 1}
+                  <span aria-live="polite">
+                    <SROnly>Current slide: </SROnly>
+                    {props.currentSlide + 1}
+                    <SROnly>Total of </SROnly>/{items.length + 1}
                   </span>
                 );
               }}
@@ -178,20 +180,6 @@ export default function Carousel({ items }: EmbeddedVideosPropType) {
             </Slider>
           </FeaturedList>
         </div>
-        {items.length > 1 && (
-          <ButtonGroup
-            topHeight={height}
-            role="group"
-            aria-label="Slide controls"
-          >
-            <ButtonBackStyled>
-              <CollecticonChevronLeft title="Go to previous slide" meaningful />
-            </ButtonBackStyled>
-            <ButtonNextStyled>
-              <CollecticonChevronRight title="Go to next slide" meaningful />
-            </ButtonNextStyled>
-          </ButtonGroup>
-        )}
       </CarouselProvider>
     </Lazyload>
   );
