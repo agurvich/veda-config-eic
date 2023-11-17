@@ -72,24 +72,7 @@ const GradientWrapper = styled.div`
   );
 `;
 
-const BottomContent = styled(Hug)`
-  display: flex;
-  flex-flow: column;
-  width: 80%;
-  margin: auto;
-  gap: ${glsp()};
-  p {
-    width: 60%;
-  }
-
-  ${media.largeDown`
-    width: 100%;
-    margin: 0;
-    p {
-      width: 100%;
-    }
-  `}
-`;
+const BottomContent = styled(Hug)``;
 
 const InfoImageContent = styled.div`
   display: flex;
@@ -97,9 +80,9 @@ const InfoImageContent = styled.div`
   background-color: #02225b; // @TODO: But where can I get this color?
   color: #ffffff;
   width: 100%;
-  height: 350px;
+  height: 300px;
   background-image: url(${RedEarthImg});
-  background-position: right;
+  background-position: right bottom -50px;
   background-repeat: no-repeat;
   div {
     display: flex;
@@ -112,6 +95,11 @@ const InfoImageContent = styled.div`
   a {
     width: 18.5rem;
   }
+  grid-column: full-start / full-end;
+  ${media.largeUp`
+    grid-column: content-2 / content-12;
+    height: 350px;
+  `}
 `;
 
 const CollaboratorsContent = styled.div`
@@ -130,6 +118,14 @@ const CollaboratorsContent = styled.div`
 
   p {
     text-align: center;
+  }
+`;
+const HugP = styled(Hug)`
+  > p {
+    grid-column: full-start / full-end;
+    ${media.largeUp`
+      grid-column: content-2 / content-12;
+    `}
   }
 `;
 
@@ -178,7 +174,7 @@ export default function HomeComponent() {
       <GradientWrapper>
         <Fold>
           <FoldBody>
-            <BottomContent>
+            <HugP>
               <p>
                 Earth.gov is also the gateway to other interagency cooperative
                 efforts for our planet, like the{" "}
@@ -187,6 +183,8 @@ export default function HomeComponent() {
                   U.S. Greenhouse Gas Center
                 </ExpandLink>
               </p>
+            </HugP>
+            <BottomContent>
               <InfoImageContent>
                 <div>
                   <StyledVarHeading size="small" as="h2">

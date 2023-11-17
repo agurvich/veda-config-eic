@@ -73,13 +73,14 @@ const FooterMenuLink = styled(NavLink)`
 const FooterContacts = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center;
+
   padding: ${variableGlsp(1)};
   gap: ${glsp()};
   flex-flow: column;
 
   ${media.mediumUp`
     flex-flow: row nowrap;
+    align-items: center;
   `}
 `;
 
