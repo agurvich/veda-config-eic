@@ -2,9 +2,22 @@ import { themeVal, glsp } from "$veda-ui/@devseed-ui/theme-provider";
 import styled, { css } from "$veda-ui/styled-components";
 import { VarHeading } from "$veda-ui-scripts/styles/variable-components";
 
+export const hoverStyle = css`
+  &:hover {
+    opacity: 0.67;
+  }
+`;
+
 export const focusStyle = css`
-  &:focus {
-    outline: 5px auto -webkit-focus-ring-color;
+  // Very subtle outline for mouse 
+  &:focus:not(:focus-visible) { 
+    outline: none 
+    box-shadow: ${themeVal("boxShadow.elevationA")}
+  }
+  // Enable outline for keyboard
+  &:focus,
+  &:focus-visible {
+    outline: 5px auto ${themeVal("color.base-300")};
   }
 `;
 

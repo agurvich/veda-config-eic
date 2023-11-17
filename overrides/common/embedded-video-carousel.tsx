@@ -28,7 +28,7 @@ import { LoadingSkeleton } from "$veda-ui-scripts/components/common/loading-skel
 // required CSS for pure-react-carousel
 import "pure-react-carousel/dist/react-carousel.es.css";
 
-import { focusStyle } from "./style";
+import { focusStyle, hoverStyle } from "./style";
 
 const SROnly = styled.span`
   ${visuallyHidden}
@@ -83,26 +83,20 @@ const ButtonBackStyled = styled(ButtonBack)`
   ${buttonStyle}
   background-color: ${themeVal("color.primary")};
   &:hover {
-    background-color: ${themeVal("color.secondary")};
+    background-color: ${themeVal("color.primary")};
   }
-  &:active,
-  &:focus,
-  &:hover {
-    ${focusStyle}
-  }
+  ${hoverStyle}
+  ${focusStyle}
 `;
 
 const ButtonNextStyled = styled(ButtonNext)`
   ${buttonStyle}
   background-color: ${themeVal("color.primary")};
   &:hover {
-    background-color: ${themeVal("color.secondary")};
+    background-color: ${themeVal("color.primary")};
   }
-  &:active,
-  &:focus,
-  &:hover {
-    ${focusStyle}
-  }
+  ${hoverStyle}
+  ${focusStyle}
 `;
 
 const DescWrapper = styled.div`
@@ -184,6 +178,20 @@ export default function Carousel({ items }: EmbeddedVideosPropType) {
             </Slider>
           </FeaturedList>
         </div>
+        {items.length > 1 && (
+          <ButtonGroup
+            topHeight={height}
+            role="group"
+            aria-label="Slide controls"
+          >
+            <ButtonBackStyled>
+              <CollecticonChevronLeft title="Go to previous slide" meaningful />
+            </ButtonBackStyled>
+            <ButtonNextStyled>
+              <CollecticonChevronRight title="Go to next slide" meaningful />
+            </ButtonNextStyled>
+          </ButtonGroup>
+        )}
       </CarouselProvider>
     </Lazyload>
   );
