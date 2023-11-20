@@ -78,18 +78,16 @@ import contentArray from './theme.AQ_.introduction_air_quality/carousel_content.
 </Block>
 
 <Block>
-  <Figure>
-    <Image
-      height="200"
-      width="200 !important"
-      src={new URL('./theme.AQ_.introduction_air_quality/air_quality_ozone_hole_200x200.png', import.meta.url).href}
-      alt='rainbow colormap image of the hole in the ozone layer above the arctic.'
-    />
-    <Caption>
+    <Prose>
       ### DID YOU KNOW?
       The ozone hole is primarily caused by human-produced chemicals like chlorofluorocarbons (CFCs), which were banned by an international treaty in 1989 to protect our natural sunscreen. Modern global warming is driven by greenhouse gases like carbon dioxide (CO2) and is primarily linked to the burning of fossil fuels. 
-    </Caption> 
-  </Figure>
+    </Prose> 
+    <Figure>
+      <Image
+        src={new URL('./theme.AQ_.introduction_air_quality/air_quality_ozone_hole_200x200.png', import.meta.url).href}
+        alt='rainbow colormap image of the hole in the ozone layer above the arctic.'
+      />
+    </Figure>
 </Block>
 
 <Block type='wide'>
