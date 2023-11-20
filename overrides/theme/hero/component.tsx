@@ -4,7 +4,7 @@ import PageHero from "$veda-ui-scripts/components/common/page-hero";
 export default function Hero() {
   return (
     <PageHero
-      title="Nine thematic areas, one earth"
+      title="Nine themes, one Earth."
       description=""
     />
   );
