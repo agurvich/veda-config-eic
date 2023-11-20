@@ -131,7 +131,7 @@ const HugP = styled(Hug)`
 
 export default function HomeComponent() {
   const description =
-    "The Earth Information Center consolidates data and insights on how Earth is changing from across the U.S. federal government. Discover how this data is being used to prepare for climate change, and mitigate, adapt, and respond to environmental challenges accross the country.";
+    "The Earth Information Center consolidates data and insights on how Earth is changing from across the US federal government. Earth.gov is also the gateway to other interagency cooperative efforts for our planet, like the U.S. Greenhouse Gas Center.  Discover how these data are being used to prepare for climate change and mitigate, adapt and respond to environmental challenges across the country.  ";
   return (
     <>
       <HomeDescription>
@@ -216,9 +216,7 @@ export default function HomeComponent() {
               Joining forces <span>for a better tomorrow</span>
             </StyledVarHeading>
             <p>
-              The Earth Information Center is grateful for the support and
-              expertise of our valued, multi-agency collaborators: EPA, FEMA,
-              NASA, NOAA, USAID, USDA, and USGS.
+              The Earth Information Center is grateful for the support and expertise of our valued, multi-agency collaborators: EPA, FEMA, NASA, NOAA, USAID, USDA and USGS
             </p>
             <Partners size="small" />
             <Button
