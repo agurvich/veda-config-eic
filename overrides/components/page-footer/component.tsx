@@ -313,11 +313,11 @@ export default function PageFooter(props) {
             <p>
               {process.env.APP_TITLE} Responsible Official:{" "}
               <a
-                href=""
+                href="mailto:eleanor.stokes@nasa.gov"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <strong>Pleaceholder</strong>
+                <strong>Eleanor Stokes</strong>
               </a>
             </p>
           </CreditsInfo>
