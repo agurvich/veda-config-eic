@@ -15,7 +15,7 @@ import Partners from "../../home/partners";
 import { useMediaQuery } from "$veda-ui-scripts/utils/use-media-query";
 
 import coverImgSrc from "./earth.png";
-import coverVideoSrc from "url:./earth-gas.mp4";
+import coverVideoSrc from "url:./eic-globe.mp4";
 
 const Hero = styled.div`
   background: ${themeVal("color.primary")};
@@ -77,7 +77,7 @@ export default function HomeHero(props) {
           <HeroHeadline>
             <VarHeading size="jumbo">{process.env.APP_TITLE}</VarHeading>
             <p>
-              Placeholder text
+              Explore our changing planet.
             </p>
           </HeroHeadline>
           <Partners variation="negative" size="big" />
@@ -103,8 +103,8 @@ export default function HomeHero(props) {
         )}
         <Figcaption>
           <FigureAttribution
-            author="NASA's Scientific Visualization Studio. Visualization of January 2021 Global Atmospheric Carbon Dioxide (CO₂)"
-            url="https://svs.gsfc.nasa.gov/5115"
+            author="NASA's Scientific Visualization Studio. A composite of different visualizations showcasing the evolution of the global biosphere, atmospheric absorption of solar radiation, groundwater storage, global precipitation, and vegetation index produced for Earth Day 2020."
+            url="https://svs.gsfc.nasa.gov/search/?series=Earth%20Day%202020"
             position="bottom-right"
           />
         </Figcaption>
