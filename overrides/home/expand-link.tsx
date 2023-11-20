@@ -2,9 +2,9 @@ import React from "$veda-ui/react";
 import { NavLink } from "$veda-ui/react-router-dom";
 import styled from "$veda-ui/styled-components";
 import { glsp, themeVal } from "$veda-ui/@devseed-ui/theme-provider";
-import { CollecticonArrowRight } from "$veda-ui/@devseed-ui/collecticons";
+import { CollecticonExpandTopRight } from "$veda-ui/@devseed-ui/collecticons";
 
-const ArrowLinkCmp = styled(NavLink)`
+const ExpandLinkCmp = styled.a`
   display: flex;
   align-items: center;
   gap: ${glsp(0.5)};
@@ -18,13 +18,13 @@ const ArrowLinkCmp = styled(NavLink)`
   }
 `;
 
-export function ArrowLink(props) {
+export function ExpandLink(props) {
   const { children, ...rest } = props;
 
   return (
-    <ArrowLinkCmp {...rest}>
-      <CollecticonArrowRight />
+    <ExpandLinkCmp {...rest}>
       {children}
-    </ArrowLinkCmp>
+      <CollecticonExpandTopRight />
+    </ExpandLinkCmp>
   );
 }

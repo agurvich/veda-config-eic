@@ -1,34 +1,28 @@
 import React from "$veda-ui/react";
 import styled from "$veda-ui/styled-components";
 import { glsp, themeVal, media } from "$veda-ui/@devseed-ui/theme-provider";
-
 import Constrainer from "$veda-ui-scripts/styles/constrainer";
-import { VarHeading } from "$veda-ui-scripts/styles/variable-components";
-import Image from "$veda-ui-scripts/components/common/blocks/images";
+import { StyledVarHeading } from "../../common/style";
+
+import coverImgSrc from "./earth.png";
+
 import {
   Figcaption,
   Figure,
   FigureAttribution,
 } from "$veda-ui-scripts/components/common/figure";
 
-import Partners from "../../home/partners";
-import { useMediaQuery } from "$veda-ui-scripts/utils/use-media-query";
-
-import coverImgSrc from "./earth.png";
-import coverVideoSrc from "url:./eic-globe.mp4";
-
 const Hero = styled.div`
   background: ${themeVal("color.primary")};
   color: ${themeVal("color.surface")};
-  padding: ${glsp(3, 0, 0, 0)};
 `;
 
 const PageHeroHGroup = styled.div`
   grid-column: 1 / -1;
   display: flex;
-  flex-flow: column;
-  gap: ${glsp(3)};
-  align-items: center;
+  ${media.smallDown`
+    align-self: flex-start;
+  `}
 `;
 
 const HeroHeadline = styled.div`
@@ -37,78 +31,61 @@ const HeroHeadline = styled.div`
   flex-flow: column;
   gap: ${glsp()};
   align-items: center;
-
-  p {
-    font-size: 1.25rem;
-  }
 `;
 
-const PageHeroCover = styled(Figure)`
-  height: 16rem;
-  width: 100%;
-
-  ${media.mediumUp`
-    margin-top: -4rem;
-    height: 23rem;
+const HeroBody = styled.div`
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-bottom: ${glsp(2)};
+  ${media.smallDown`
+    flex-direction: column;
   `}
-
-  ${media.largeUp`
-    height: 28rem;
-    margin-top: -6rem;
-  `}
-
-  img,
-  video {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    object-position: top;
-    mix-blend-mode: lighten;
-  }
 `;
 
+const PageHeroAttribution = styled(Figure)`
+  height: 10rem;
+  width: 20rem;
+  max-width: 100%;
+  margin-bottom: ${glsp(-3)};
+  ${media.smallDown`
+    height: 8rem;
+    margin-bottom: ${glsp(-1)};
+  `}
+`;
+const VarHeadingWithShadow = styled(StyledVarHeading)`
+  text-shadow: 1px 1px ${themeVal("color.base-200a")};
+`;
 export default function HomeHero(props) {
-  const { isMediumUp } = useMediaQuery();
+  const infoOnClick = () => {
+    return;
+  };
 
   return (
     <Hero>
       <Constrainer>
-        <PageHeroHGroup>
-          <HeroHeadline>
-            <VarHeading size="jumbo">{process.env.APP_TITLE}</VarHeading>
-            <p>
-              Explore our changing planet.
-            </p>
-          </HeroHeadline>
-          <Partners variation="negative" size="big" />
-        </PageHeroHGroup>
+        <HeroBody>
+          <PageHeroHGroup>
+            <HeroHeadline>
+              <VarHeadingWithShadow size="large">
+                Explore our changing planet
+              </VarHeadingWithShadow>
+            </HeroHeadline>
+          </PageHeroHGroup>
+          <PageHeroAttribution>
+            <Figcaption>
+              <img src={coverImgSrc} alt="Earth Image for hero" />
+              <FigureAttribution
+                author="NASA's Scientific Visualization Studio. Visualization of January 2021 Global Atmospheric Carbon Dioxide (CO₂)"
+                url="https://svs.gsfc.nasa.gov/5115"
+                position="bottom-right"
+              />
+            </Figcaption>
+          </PageHeroAttribution>
+        </HeroBody>
       </Constrainer>
-      <PageHeroCover>
-        {isMediumUp ? (
-          <video
-            autoPlay
-            loop
-            muted
-            disablePictureInPicture
-            disableRemotePlayback
-          >
-            <source src={coverVideoSrc} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        ) : (
-          <img
-            src={coverImgSrc}
-            alt="visualizaion of january 2021 global atmospheric carbon dioxide"
-          />
-        )}
-        <Figcaption>
-          <FigureAttribution
-            author="NASA's Scientific Visualization Studio. A composite of different visualizations showcasing the evolution of the global biosphere, atmospheric absorption of solar radiation, groundwater storage, global precipitation, and vegetation index produced for Earth Day 2020."
-            url="https://svs.gsfc.nasa.gov/search/?series=Earth%20Day%202020"
-            position="bottom-right"
-          />
-        </Figcaption>
-      </PageHeroCover>
     </Hero>
   );
 }

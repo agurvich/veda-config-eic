@@ -1,11 +1,30 @@
 import { themeVal, glsp } from "$veda-ui/@devseed-ui/theme-provider";
-import { css } from '$veda-ui/styled-components';
+import styled, { css } from "$veda-ui/styled-components";
+import { VarHeading } from "$veda-ui-scripts/styles/variable-components";
+
+export const hoverStyle = css`
+  &:hover {
+    opacity: 0.67;
+  }
+`;
 
 export const focusStyle = css`
-  &:focus {
-    outline: 5px auto -webkit-focus-ring-color;
+  // Very subtle outline for mouse 
+  &:focus:not(:focus-visible) { 
+    outline: none 
+    box-shadow: ${themeVal("boxShadow.elevationA")}
   }
-`
+  // Enable outline for keyboard
+  &:focus,
+  &:focus-visible {
+    outline: 5px auto ${themeVal("color.base-300")};
+  }
+`;
+
+export const StyledVarHeading = styled(VarHeading)`
+  font-weight: ${themeVal("type.base.medium")};
+  letter-spacing: -0.03rem;
+`;
 
 export const decorativeHeader = css`
   column-span: all;
@@ -14,10 +33,10 @@ export const decorativeHeader = css`
   flex-direction: column;
   gap: calc(${glsp()} - ${glsp(0.25)});
   &::before {
-    content: '';
+    content: "";
     width: ${glsp(2)};
     height: ${glsp(0.25)};
-    border-radius: ${themeVal('shape.rounded')};
-    background: ${themeVal('color.primary')};
+    border-radius: ${themeVal("shape.rounded")};
+    background: ${themeVal("color.primary")};
   }
-`
+`;
