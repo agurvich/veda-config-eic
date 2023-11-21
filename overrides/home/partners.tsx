@@ -94,44 +94,34 @@ export default function Partners(props: {
   ]
 
   const createOrder = (top?: number) => {
+    const createRow = (logos: any[]) => (
+      <>
+        {logos.map((partner) => (
+          <a href={partner.href}>
+            <Image 
+              src={partner.src}
+              alt={partner.alt}
+              height={partner.height || squareLogoHeight}
+            />
+          </a>
+        ))}
+      </>
+    );
+
     if (top) {
-      const bottomLogos = partners.splice(top);
-
-      const createRow = (logos: any[]) => (
-        <div>
-          {logos.map((partner) => (
-            <a href={partner.href}>
-              <Image 
-                src={partner.src}
-                alt={partner.alt}
-                height={partner.height ? partner.height : squareLogoHeight}
-              />
-            </a>
-          ))}
-        </div>
-      );
-
+      const bottom = partners.splice(top);
       return (
         <LogoWrapperWithLimit>
-          {createRow(partners)}
-          {createRow(bottomLogos)}
+          <div>{createRow(partners)}</div>
+          <div>{createRow(bottom)}</div>
         </LogoWrapperWithLimit>
       );
-    }
-    else {
+    } else {
       return (
         <LogoWrapper>
-          {partners.map((partner) => (
-            <a href={partner.href}>
-              <Image 
-                src={partner.src}
-                alt={partner.alt}
-                height={partner.height ? partner.height : squareLogoHeight}
-              />
-            </a>
-          ))}
+          {createRow(partners)}
         </LogoWrapper>
-      )
+      );
     }
   }
   
