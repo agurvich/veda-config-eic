@@ -51,12 +51,6 @@ const FooterMenu = styled.ul`
     align-items: center;
     gap: ${glsp(3)};
   `}
-
-  li:last-child {
-    ${media.mediumUp`
-      margin-left: auto;
-    `}
-  }
 `;
 
 const FooterMenuLink = styled(NavLink)`
@@ -278,33 +272,12 @@ export default function PageFooter(props) {
                 <FooterMenuLink to={ABOUT_PATH}>About</FooterMenuLink>
               </li>
               <li>
-                {process.env.GOOGLE_FORM ? (
-                  isMediumUp ? (
-                    <Button
-                      variation="primary-outline"
-                      size="large"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        show();
-                      }}
-                    >
-                      Contact Us
-                    </Button>
-                  ) : (
-                    <FooterMenuLink
-                      as="a"
-                      href="#"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        show();
-                      }}
-                    >
-                      Contact Us
-                    </FooterMenuLink>
-                  )
-                ) : (
-                  false
-                )}
+                <FooterMenuLink
+                  as="a"
+                  href="https://docs.google.com/forms/d/1mDgFqUsNv90Js7pERNDbmyN5RksztIy5ZZojWD0n5Pg"
+                >
+                  Contact Us
+                </FooterMenuLink>
               </li>
             </FooterMenu>
           </nav>
