@@ -23,7 +23,6 @@ import RedEarthImg from "./media/earth-1.png";
 
 const IntroHeadline = styled(Hug)`
   display: flex;
-  flex-flow: column;
   gap: ${glsp(2)};
   grid-column: content-start / content-end;
 
@@ -32,6 +31,10 @@ const IntroHeadline = styled(Hug)`
     flex-flow: row;
   `}
 
+  ${media.mediumDown`
+    flex-flow: column;
+  `}
+  
   p {
     font-size: 1.25rem;
     padding-top: 1rem;
@@ -144,7 +147,7 @@ export default function HomeComponent() {
             </StyledVarHeading>
             <p>{description}</p>
           </IntroDesc>
-          <Partners size="small" />
+          <Partners size="small" top={4} />
         </IntroHeadline>
       </HomeDescription>
       <ContentContainer>
