@@ -220,8 +220,8 @@ export default function HomeComponent() {
             </StyledVarHeading>
             <p>
               The Earth Information Center is grateful for the support and
-              expertise of our valued, multi-agency collaborators: EPA, FEMA,
-              NASA, NOAA, USAID, USDA, and USGS.
+              expertise of our valued, multi-agency collaborators: NASA, EPA, FEMA,
+              NOAA, USAID, USDA, and USGS.
             </p>
             <Partners size="small" />
             <Button
