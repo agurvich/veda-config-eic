@@ -23,7 +23,6 @@ import RedEarthImg from "./media/earth-1.png";
 
 const IntroHeadline = styled(Hug)`
   display: flex;
-  flex-flow: column;
   gap: ${glsp(2)};
   grid-column: content-start / content-end;
 
@@ -32,6 +31,10 @@ const IntroHeadline = styled(Hug)`
     flex-flow: row;
   `}
 
+  ${media.mediumDown`
+    flex-flow: column;
+  `}
+  
   p {
     font-size: 1.25rem;
     padding-top: 1rem;
@@ -72,24 +75,7 @@ const GradientWrapper = styled.div`
   );
 `;
 
-const BottomContent = styled(Hug)`
-  display: flex;
-  flex-flow: column;
-  width: 80%;
-  margin: auto;
-  gap: ${glsp()};
-  p {
-    width: 60%;
-  }
-
-  ${media.largeDown`
-    width: 100%;
-    margin: 0;
-    p {
-      width: 100%;
-    }
-  `}
-`;
+const BottomContent = styled(Hug)``;
 
 const InfoImageContent = styled.div`
   display: flex;
@@ -97,9 +83,9 @@ const InfoImageContent = styled.div`
   background-color: #02225b; // @TODO: But where can I get this color?
   color: #ffffff;
   width: 100%;
-  height: 350px;
+  height: 300px;
   background-image: url(${RedEarthImg});
-  background-position: right;
+  background-position: right bottom -50px;
   background-repeat: no-repeat;
   div {
     display: flex;
@@ -112,6 +98,11 @@ const InfoImageContent = styled.div`
   a {
     width: 18.5rem;
   }
+  grid-column: full-start / full-end;
+  ${media.largeUp`
+    grid-column: content-2 / content-12;
+    height: 350px;
+  `}
 `;
 
 const CollaboratorsContent = styled.div`
@@ -132,6 +123,14 @@ const CollaboratorsContent = styled.div`
     text-align: center;
   }
 `;
+const HugP = styled(Hug)`
+  > p {
+    grid-column: full-start / full-end;
+    ${media.largeUp`
+      grid-column: content-2 / content-12;
+    `}
+  }
+`;
 
 export default function HomeComponent() {
   const description =
@@ -148,7 +147,7 @@ export default function HomeComponent() {
             </StyledVarHeading>
             <p>{description}</p>
           </IntroDesc>
-          <Partners size="small" />
+          <Partners size="small" top={4} />
         </IntroHeadline>
       </HomeDescription>
       <ContentContainer>
@@ -178,7 +177,7 @@ export default function HomeComponent() {
       <GradientWrapper>
         <Fold>
           <FoldBody>
-            <BottomContent>
+            <HugP>
               <p>
                 Earth.gov is also the gateway to other interagency cooperative
                 efforts for our planet, like the{" "}
@@ -187,6 +186,8 @@ export default function HomeComponent() {
                   U.S. Greenhouse Gas Center
                 </ExpandLink>
               </p>
+            </HugP>
+            <BottomContent>
               <InfoImageContent>
                 <div>
                   <StyledVarHeading size="small" as="h2">

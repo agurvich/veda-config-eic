@@ -28,7 +28,7 @@ import { LoadingSkeleton } from "$veda-ui-scripts/components/common/loading-skel
 // required CSS for pure-react-carousel
 import "pure-react-carousel/dist/react-carousel.es.css";
 
-import { focusStyle } from "./style";
+import { focusStyle, hoverStyle } from "./style";
 
 const SROnly = styled.span`
   ${visuallyHidden}
@@ -70,6 +70,8 @@ const ButtonGroup = styled.div`
   gap: ${glsp(1)};
   top: calc(${(props) => props.topHeight}px + ${glsp(4)});
   left: unset;
+  align-items: center;
+  z-index: 5;
 `;
 
 const buttonStyle = createButtonStyles({
@@ -81,26 +83,20 @@ const ButtonBackStyled = styled(ButtonBack)`
   ${buttonStyle}
   background-color: ${themeVal("color.primary")};
   &:hover {
-    background-color: ${themeVal("color.secondary")};
+    background-color: ${themeVal("color.primary")};
   }
-  &:active,
-  &:focus,
-  &:hover {
-    ${focusStyle}
-  }
+  ${hoverStyle}
+  ${focusStyle}
 `;
 
 const ButtonNextStyled = styled(ButtonNext)`
   ${buttonStyle}
   background-color: ${themeVal("color.primary")};
   &:hover {
-    background-color: ${themeVal("color.secondary")};
+    background-color: ${themeVal("color.primary")};
   }
-  &:active,
-  &:focus,
-  &:hover {
-    ${focusStyle}
-  }
+  ${hoverStyle}
+  ${focusStyle}
 `;
 
 const DescWrapper = styled.div`
@@ -127,6 +123,32 @@ export default function Carousel({ items }: EmbeddedVideosPropType) {
         totalSlides={items.length}
         style={{ gridColumn: "1 / -1", gridRow: "2", position: "relative" }}
       >
+        {items.length > 1 && (
+          <ButtonGroup
+            topHeight={height}
+            role="group"
+            aria-label="Slide controls"
+          >
+            <ButtonBackStyled>
+              <CollecticonChevronLeft title="Go to previous slide" meaningful />
+            </ButtonBackStyled>
+            {/* A workaround to show current slide number/ total slide number */}
+            <DotGroup
+              renderDots={(props) => {
+                return (
+                  <span aria-live="polite">
+                    <SROnly>Current slide: </SROnly>
+                    {props.currentSlide + 1}
+                    <SROnly>Total of </SROnly>/{items.length + 1}
+                  </span>
+                );
+              }}
+            />
+            <ButtonNextStyled>
+              <CollecticonChevronRight title="Go to next slide" meaningful />
+            </ButtonNextStyled>
+          </ButtonGroup>
+        )}
         <div role="region" aria-label="Carousel">
           <FeaturedList>
             <Slider>
@@ -150,29 +172,13 @@ export default function Carousel({ items }: EmbeddedVideosPropType) {
                       <p>{t.caption}</p>
                     </DescWrapper>
                   </Slide>
-                  <SROnly id={`carousel-item-${idx}__label`}>{t.title}</SROnly>
+                  <SROnly id={`carousel-item-${idx}__label`} aria-live="polite">
+                    {t.title}
+                  </SROnly>
                 </FeaturedContent>
               ))}
             </Slider>
           </FeaturedList>
-
-          {items.length > 1 && (
-            <ButtonGroup
-              topHeight={height}
-              role="group"
-              aria-label="Slide controls"
-            >
-              <ButtonBackStyled>
-                <CollecticonChevronLeft
-                  title="Go to previous slide"
-                  meaningful
-                />
-              </ButtonBackStyled>
-              <ButtonNextStyled>
-                <CollecticonChevronRight title="Go to next slide" meaningful />
-              </ButtonNextStyled>
-            </ButtonGroup>
-          )}
         </div>
       </CarouselProvider>
     </Lazyload>
