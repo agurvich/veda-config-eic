@@ -21,7 +21,12 @@ const ThemeCard = styled.article`
   display: flex;
   flex-flow: column nowrap;
   border-top: 1px solid ${themeVal("color.base-200a")};
-  ${hoverStyle}
+  
+  &:hover {
+    h3 {
+      text-decoration: underline;
+    }
+  }
 `;
 const ThemeCardImageWrapper = styled.figure`
   height: 240px;
