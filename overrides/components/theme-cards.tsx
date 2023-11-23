@@ -21,7 +21,7 @@ const ThemeCard = styled.article`
   display: flex;
   flex-flow: column nowrap;
   border-top: 1px solid ${themeVal("color.base-200a")};
-  
+
   &:hover {
     h3 {
       text-decoration: underline;
@@ -69,7 +69,7 @@ export default function ThemeCards({ storyIds }: ContentsPropType) {
           <img src={t.media.src} alt={t.media.alt} />
         </ThemeCardImageWrapper>
         <p>{t.description}</p>
-        <ThemeLink to={t.id}>View more</ThemeLink>
+        <ThemeLink to={`/stories/${t.id}`}>View more</ThemeLink>
       </ThemeCard>
     </li>
   ));
