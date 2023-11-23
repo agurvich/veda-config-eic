@@ -44,7 +44,7 @@ export const disastersStoryIds = [
 ]
 
 export const energyStoryIds = [
-  "introduction_energy_generation"
+  "introduction_energy"
 ];
 
 export const greenhouseGasesStoryIds = [
