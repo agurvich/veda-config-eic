@@ -9,15 +9,15 @@ export const hoverStyle = css`
 `;
 
 export const focusStyle = css`
-  // Very subtle outline for mouse 
+  // Very subtle outline for mouse focus
   &:focus:not(:focus-visible) { 
     outline: none 
     box-shadow: ${themeVal("boxShadow.elevationA")}
   }
-  // Enable outline for keyboard
+  // More visible outline for keyboard focus
   &:focus,
   &:focus-visible {
-    outline: 5px auto ${themeVal("color.base-300")};
+    outline: 5px auto ${themeVal("color.primary")};
   }
 `;
 
