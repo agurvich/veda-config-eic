@@ -39,9 +39,9 @@ module.exports = {
       one: "Theme",
       other: "Themes",
     },
-    storiesBanner: "Something related to themes.",
+    storiesBanner: "Nine themes, one Earth.",
     dataCatalogBanner:
-      "This dashboard is for exploring key datasets that provide insight into greenhouse gas sources, sinks, emissions, fluxes, and events.",
+      "These datasets offer a sample of the global, actionable, and regularly updated data products that Earth.gov will offer. This curated list is not a comprehensive accounting of all Earth data produced by the federal government and additional datasets will be added as they become available.",
   },
 
   theme: {

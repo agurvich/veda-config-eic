@@ -134,7 +134,7 @@ const HugP = styled(Hug)`
 
 export default function HomeComponent() {
   const description =
-    "The Earth Information Center consolidates data and insights on how Earth is changing from across the U.S. federal government. Discover how this data is being used to prepare for climate change, and mitigate, adapt, and respond to environmental challenges accross the country.";
+    "The Earth Information Center consolidates data and insights on how Earth is changing from across the US federal government. Earth.gov is also the gateway to other interagency cooperative efforts for our planet, like the U.S. Greenhouse Gas Center.  Discover how these data are being used to prepare for climate change and mitigate, adapt and respond to environmental challenges across the country.  ";
   return (
     <>
       <HomeDescription>
@@ -161,7 +161,7 @@ export default function HomeComponent() {
             <FoldHeadActions>
               <Button
                 forwardedAs={Link}
-                to="/stories" //@TODO: THIS NEEDS TO BE REPLACED
+                to="/stories"
                 size="medium"
                 radius="square"
                 variation="primary-fill"
@@ -181,7 +181,7 @@ export default function HomeComponent() {
               <p>
                 Earth.gov is also the gateway to other interagency cooperative
                 efforts for our planet, like the{" "}
-                <ExpandLink to={`https://ghg.center/`}>
+                <ExpandLink as="a" href="https://earth.gov/ghgcenter">
                   {" "}
                   U.S. Greenhouse Gas Center
                 </ExpandLink>
@@ -199,7 +199,7 @@ export default function HomeComponent() {
                   </span>
                   <Button
                     forwardedAs="a"
-                    href="https://hub.ghg.center/hub/" //@TODO: This isn't working with external link
+                    href="https://earth.gov/ghgcenter"
                     size="medium"
                     radius="square"
                     variation="primary-fill"
@@ -220,13 +220,13 @@ export default function HomeComponent() {
             </StyledVarHeading>
             <p>
               The Earth Information Center is grateful for the support and
-              expertise of our valued, multi-agency collaborators: EPA, FEMA,
-              NASA, NOAA, USAID, USDA, and USGS.
+              expertise of our valued, multi-agency collaborators: NASA, EPA, FEMA,
+              NOAA, USAID, USDA, and USGS.
             </p>
             <Partners size="small" />
             <Button
               forwardedAs="a"
-              href="https://ghg.center/" //@TODO: THIS NEEDS TO BE REPLACED
+              href="/about"
               size="medium"
               radius="square"
               variation="primary-fill"

@@ -16,7 +16,7 @@ media:
   author:
     name: "NASA"
     url: "https://nasa.gov"
-pubDate: 2023-10-18
+pubDate: 2023-11-28
 taxonomy:
   - name: Theme Page
     values:
@@ -26,23 +26,24 @@ taxonomy:
 import CardGallery from "./components/card_gallery";
 import { airQualityStoryIds } from "../overrides/common/story-data";
 
-import Carousel from './components/carousel.jsx';
+import Carousel from "../overrides/common/embedded-video-carousel";
 import contentArray from './theme.AQ_.introduction_air_quality/carousel_content.json';
 
 <Block type='wide'>
   <Prose>
   ## Info
 
-  Air pollution is a global hazard, so it takes a combination of airborne, ground, and satellite-based tools to better understand the origins and movement of pollutants, as well as the impacts on air quality.
+  Air pollution is a global hazard, so it takes a combination of airborne, ground and satellite-based tools to better understand the origins and movement of pollutants, as well as the impacts on air quality.
   The causes of air pollution vary from human activities, such as coal-fired power plants, to natural events, like wildfires and dust storms.
 
-  Ground-based measurements are also used to assess air quality and the concentrations of different types of atmospheric pollution.
-  Satellite data helps fill the gaps between ground-based monitors, so there is global coverage over all neighborhoods.
+  Ground-based measurements are used to assess air quality and the concentrations of different types of atmospheric pollution. 
+  Ground-level data help evaluate information from satellite.
+  And satellite data help fill the gaps between ground-based monitors, so there is global coverage over all neighborhoods.
 
   Satellite-acquired data have many health and air-quality applications, including:
   * Monitoring the movement of wildfire smoke and dust plumes.
   * Tracking the path of ash from volcanic eruptions.
-  * Identifying concentrations of nitrogen dioxide, sulfur dioxide, and other pollutants near cities, suburbs, and major transportation systems.
+  * Identifying concentrations of nitrogen dioxide, sulfur dioxide and other pollutants near cities, suburbs and major transportation systems.
   * Understanding how concentrations of these pollutants are changing over time.
   </Prose>
 </Block>
@@ -63,35 +64,37 @@ import contentArray from './theme.AQ_.introduction_air_quality/carousel_content.
 <Block type="wide">
   <Prose>
   ## Air Quality
-    Air pollution is a global hazard, so it takes a combination of airborne, ground, and satellite-based tools to better understand the origins and movement of pollutants, as well as the impacts on air quality.
+    Air pollution is a global hazard, so it takes a combination of airborne, ground and satellite-based tools to better understand the origins and movement of pollutants, as well as the impacts on air quality.
     The causes of air pollution vary from human activities, such as coal-fired power plants, to natural events, like wildfires and dust storms.
 
-  Ground-based measurements are also used to assess air quality and the concentrations of different types of atmospheric pollution. Satellite data helps fill the gaps between ground-based monitors, so there is global coverage over all neighborhoods.
+  Ground-based measurements are also used to assess air quality and the concentrations of different types of atmospheric pollution. Satellite data help fill the gaps between ground-based monitors, so there is global coverage over all neighborhoods.
 
   Satellite-acquired data have many health and air-quality applications, including:
   * Monitoring the movement of wildfire smoke and dust plumes.
   * Tracking the path of ash from volcanic eruptions.
-  * Identifying concentrations of nitrogen dioxide, sulfur dioxide, and other pollutants near cities, suburbs, and major transportation systems.
+  * Identifying concentrations of nitrogen dioxide, sulfur dioxide and other pollutants near cities, suburbs and major transportation systems.
   * Understanding how concentrations of these pollutants are changing over time.
   </Prose>
 </Block>
 
 <Block>
-  <Figure>
-    <Image
-      height="200"
-      width="200 !important"
-      src={new URL('./theme.AQ_.introduction_air_quality/air_quality_ozone_hole_200x200.png', import.meta.url).href}
-      alt='rainbow colormap image of the hole in the ozone layer above the arctic.'
-    />
-    <Caption>
+    <Prose>
       ### DID YOU KNOW?
       The ozone hole is primarily caused by human-produced chemicals like chlorofluorocarbons (CFCs), which were banned by an international treaty in 1989 to protect our natural sunscreen. Modern global warming is driven by greenhouse gases like carbon dioxide (CO2) and is primarily linked to the burning of fossil fuels. 
-    </Caption> 
-  </Figure>
+    </Prose> 
+    <Figure>
+      <Image
+        src={new URL('./theme.AQ_.introduction_air_quality/air_quality_ozone_hole_200x200.png', import.meta.url).href}
+        alt='rainbow colormap image of the hole in the ozone layer above the arctic.'
+      />
+    </Figure>
 </Block>
 
-<Carousel contentArray={contentArray}/>
+<Block type='wide'>
+  <Figure>
+    <Carousel items={contentArray} />
+  </Figure>
+</Block>
 
 <Block>
   <Prose>

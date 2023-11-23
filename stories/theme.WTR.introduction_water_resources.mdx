@@ -5,7 +5,7 @@ id: "introduction_water_resources"
 name: Introduction to Water Resources
 description: "
   Water is one of Earth's most vital resources, but in many regions, water supplies are increasingly scarce.
-  Learn how Earth data is improving monitoring and forecasting of water use, availability and water extremes."
+  Learn how Earth data are improving monitoring and forecasting of water use, availability and water extremes."
 asLink:
   url: https://wwao.jpl.nasa.gov/water-portal/
 media:
@@ -16,13 +16,28 @@ media:
   author:
     name: "NASA"
     url: "https://nasa.gov"
-pubDate: 2023-10-18
+pubDate: 2023-11-28
 taxonomy:
   - name: Topics
     values:
       - water resources
 ---
 
-<Block type="wide">
-  <Prose> link out </Prose>
+import CardGallery from "./components/card_gallery";
+import { waterResourcesStoryIds } from "../overrides/common/story-data";
+
+<Block type='wide'>
+  <Prose>
+    ## Info
+
+    Water is a vital resource to life on Earth.
+    While the majority of Earth's surface is covered in water, only 1% of Earth's water is readily available for use.
+    This includes water used in essential activities such as consumption or agricultural practices required to sustain life.
+    As populations expand and demand for water grows, understanding how changing temperatures and precipitation patterns impact global water supply is important.
+    The water cycle describes how water moves throughout the planet's atmosphere, oceans and land; highlighting connections among each phase of the cycle.
+    Using a combination of Earth observing satellites and sensors, ground-based monitoring and scientific modeling, we can observe Earth's water resources at all stages of the water cycle.
+    This information can be used to make informed management decision surrounding the most vital resource on planet Earth.
+  </Prose>
 </Block>
+
+<CardGallery title={"Water Resources Stories"} storyIds={waterResourcesStoryIds} />

@@ -310,9 +310,7 @@ export default function PageFooter(props) {
             </TintBox>
             <p>
               {process.env.APP_TITLE} Responsible Official:{" "}
-              <a href="" target="_blank" rel="noopener noreferrer">
-                <strong>Pleaceholder</strong>
-              </a>
+                <strong>Eleanor Stokes</strong>
             </p>
           </CreditsInfo>
         </FooterContacts>
