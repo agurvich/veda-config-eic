@@ -139,7 +139,7 @@ export default function Carousel({ items }: EmbeddedVideosPropType) {
                   <span aria-live="polite">
                     <SROnly>Current slide: </SROnly>
                     {props.currentSlide + 1}
-                    <SROnly>Total of </SROnly>/{items.length + 1}
+                    <SROnly>Total of </SROnly>/{items.length}
                   </span>
                 );
               }}
