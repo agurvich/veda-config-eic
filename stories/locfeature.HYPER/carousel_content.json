@@ -1,23 +1,8 @@
 [
     {
-        "src":"https://www.youtube.com/embed/rzrUbVrmzMd",
-        "title":"Blue Marble",
-        "caption":"Visitors experience the overview effect of the Blue Marble.  NASA's Blue Marble Next Generation images are used to reveal seasonal changes to the land surface: the green-up and dying-back of vegetation in temperate regions such as North America and Europe, dry and wet seasons in the tropics, and advancing and retreating Northern Hemisphere snow cover. ",
-        "thumbnail":"locfeature.HYPER/blue_marble.jpg"
-    },{
-        "src":"https://www.youtube.com/embed/rzrUbVrmzMe",
-        "title":"Eyes on Earth",
-        "caption":"Visitors are introduced to the density and sophistication of NASA’s satellites in orbit. The data in this section of the experience are pulled directly from NASA’s Eyes On the Earth. The rendering of the satellites and their motion paths takes place in a 24-hr delay time.  ",
-        "thumbnail":"locfeature.HYPER/eyes_on_earth.jpg"
-    },{
-        "src":"https://www.youtube.com/embed/rzrUbVrmzMf",
-        "title":"Black Marble",
-        "caption":"NASA’s Black Marble data was used to create a detailed 3D model of Earth. The viewers experience the overview of the Earth at night.",
-        "thumbnail":"locfeature.HYPER/black_marble.jpg"
-    },{
         "src":"https://www.youtube.com/embed/TvPjAe4j6qQ",
         "title":"Ocean Flows",
-        "caption":"This rainbow of colors show the water temperature on the oceans’ surface. The temperature variations correspond to the flow of currents on the surface. Blue is 32 degrees Fahrenheit, green is 50 -70 F, yellow is about 80 F, red is 90 F. This visualization came from computer models by a joint MIT/NASA-JPL project Estimating the Circulation and Climate of the Ocean, Phase II."
+        "caption":"This rainbow of colors show the water temperature on the oceans' surface. The temperature variations correspond to the flow of currents on the surface. Blue is 32 degrees Fahrenheit, green is 50 -70 F, yellow is about 80 F, red is 90 F. This visualization came from computer models by a joint MIT/NASA-JPL project Estimating the Circulation and Climate of the Ocean, Phase II."
     },{
         "src":"https://www.youtube.com/embed/w3rtYM0HtIM",
         "title":"A 3D View of an Atmospheric River from an Earth System Model",

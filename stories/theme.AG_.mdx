@@ -5,7 +5,7 @@ id: "agriculture"
 name: Agriculture
 theme: true
 description: "
-  Learn how Earth data is being turned into tools to help farmers manage their crops in a changing climate.
+  Learn how Earth data are being used to help farmers manage their crops in a changing climate.
 "
 media:
   src: ::file ./external_headers/connected_earth_agriculture.png
@@ -15,7 +15,7 @@ media:
   author:
     name: "NASA"
     url: "https://nasa.gov"
-pubDate: 2023-10-18
+pubDate: 2023-11-28
 taxonomy:
   - name: Theme Page
     values:
@@ -25,7 +25,7 @@ taxonomy:
 import CardGallery from "./components/card_gallery";
 import { agricultureStoryIds } from "../overrides/common/story-data";
 
-import Carousel from './components/carousel.jsx';
+import Carousel from "../overrides/common/embedded-video-carousel";
 import contentArray from './theme.AG_.introduction_agriculture/carousel_content.json';
 
 <Block>
@@ -34,7 +34,7 @@ import contentArray from './theme.AG_.introduction_agriculture/carousel_content.
     Producing food has always been challenging, and in the 21st century, human-caused climate change is already affecting food security through increasing temperatures, increased frequency of extreme events, and changing precipitation patterns.
 
     Earth data has increasingly become part of the food farming process.
-    Observations from satellites, aircraft, ground sensors, and surveys, combined with high-end computer modeling are used by scientists working with Federal agencies who collaborate with farmers, ranchers, fishermen, and decision-makers to share their understanding of the relationship between the Earth system and the environments that provide food across the globe.
+    Observations from satellites, aircraft, ground sensors, and surveys, combined with high-end computer modeling are used by scientists working with federal agencies who collaborate with farmers, ranchers, fishermen, and decision-makers to share their understanding of the relationship between the Earth system and the environments that provide food across the globe.
   </Prose>
 </Block>
 
@@ -46,7 +46,7 @@ import contentArray from './theme.AG_.introduction_agriculture/carousel_content.
       title="NASA and Agriculture"
     />
     <Caption attrAuthor="NASA" attrUrl="https://nasa.gov/">
-      Learn how satellite data is being turned into tools to help farmers manage their crops in a changing climate.
+      Learn how earth data are being used to help farmers manage their crops in a changing climate.
     </Caption>
   </Figure>
 </Block>
@@ -54,13 +54,18 @@ import contentArray from './theme.AG_.introduction_agriculture/carousel_content.
 <Block type="wide">
   <Prose>
   ## Agriculture
-  Producing food has always been challenging, and in the 21st century, human-caused climate change is already affecting food security through increasing temperatures, increased frequency of extreme events, and changing precipitation patterns.
+  Producing food has always been challenging, and in the 21st century, human-caused climate change is already affecting food security through increasing temperatures, increased frequency of extreme events and changing precipitation patterns.
 
-  Earth data has increasingly become part of the food farming process. Observations from satellites, aircraft, ground sensors, and surveys, combined with high-end computer modeling are used by scientists working with Federal agencies who collaborate with farmers, ranchers, fishermen, and decision-makers to share their understanding of the relationship between the Earth system and the environments that provide food across the globe.
+  Earth data have increasingly become part of the food farming process.
+  Observations from satellites, aircraft, ground sensors and surveys, combined with high-end computer modeling are used by scientists working with Federal agencies who collaborate with farmers, ranchers, fishermen and decision-makers to share their understanding of the relationship between the Earth system and the environments that provide food across the globe.
   </Prose>
 </Block>
 
-<Carousel contentArray={contentArray}/>
+<Block type='wide'>
+  <Figure>
+    <Carousel items={contentArray} />
+  </Figure>
+</Block>
 
 <Block type="wide">
   <Prose>
