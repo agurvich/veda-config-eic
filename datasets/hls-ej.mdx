@@ -41,6 +41,10 @@ layers:
         ::js ({ dateFns, datetime, compareDatetime }) => {
           return `${dateFns.format(datetime, 'LLL yyyy')} VS ${dateFns.format(compareDatetime, 'LLL yyyy')}`;
         }
+    analysis:
+      exclude: false
+      metrics:
+        - mean
   - id: hls-s30-002-ej
     stacCol: hls-s30-002-ej-reprocessed
     name: HLS Sentinel-2 SWIR
@@ -55,6 +59,10 @@ layers:
         - B12
         - B8A
         - B04
+    analysis:
+      exclude: false
+      metrics:
+        - mean
 ---
 
 <Block>
