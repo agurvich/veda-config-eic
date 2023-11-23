@@ -51,12 +51,6 @@ const FooterMenu = styled.ul`
     align-items: center;
     gap: ${glsp(3)};
   `}
-
-  li:last-child {
-    ${media.mediumUp`
-      margin-left: auto;
-    `}
-  }
 `;
 
 const FooterMenuLink = styled(NavLink)`
@@ -129,7 +123,7 @@ const MODALS_CONTENT = {
     headline: "Disclaimer",
     body: (
       <p>
-        This US GHG Center Explore visualization environment is an interactive
+        This Earth Information Center Explore visualization environment is an interactive
         space for users to explore center data within a mapping environment.
         Currently only one dataset at a time can be used within the environment.
         Users are advised to review the material on the Overview page to better
@@ -141,7 +135,7 @@ const MODALS_CONTENT = {
     headline: "Disclaimer",
     body: (
       <p>
-        This US GHG Center analysis environment is an interactive space for
+        This Earth Information Center analysis environment is an interactive space for
         users to review time series of basic statistics for each dataset. All
         users are advised to review the information provided on the dataset
         landing page to better understand the data they are viewing. This
@@ -278,33 +272,12 @@ export default function PageFooter(props) {
                 <FooterMenuLink to={ABOUT_PATH}>About</FooterMenuLink>
               </li>
               <li>
-                {process.env.GOOGLE_FORM ? (
-                  isMediumUp ? (
-                    <Button
-                      variation="primary-outline"
-                      size="large"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        show();
-                      }}
-                    >
-                      Contact Us
-                    </Button>
-                  ) : (
-                    <FooterMenuLink
-                      as="a"
-                      href="#"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        show();
-                      }}
-                    >
-                      Contact Us
-                    </FooterMenuLink>
-                  )
-                ) : (
-                  false
-                )}
+                <FooterMenuLink
+                  as="a"
+                  href="https://docs.google.com/forms/d/1mDgFqUsNv90Js7pERNDbmyN5RksztIy5ZZojWD0n5Pg"
+                >
+                  Contact Us
+                </FooterMenuLink>
               </li>
             </FooterMenu>
           </nav>

@@ -23,7 +23,6 @@ import RedEarthImg from "./media/earth-1.png";
 
 const IntroHeadline = styled(Hug)`
   display: flex;
-  flex-flow: column;
   gap: ${glsp(2)};
   grid-column: content-start / content-end;
 
@@ -32,6 +31,10 @@ const IntroHeadline = styled(Hug)`
     flex-flow: row;
   `}
 
+  ${media.mediumDown`
+    flex-flow: column;
+  `}
+  
   p {
     font-size: 1.25rem;
     padding-top: 1rem;
@@ -144,7 +147,7 @@ export default function HomeComponent() {
             </StyledVarHeading>
             <p>{description}</p>
           </IntroDesc>
-          <Partners size="small" />
+          <Partners size="small" top={4} />
         </IntroHeadline>
       </HomeDescription>
       <ContentContainer>
@@ -158,7 +161,7 @@ export default function HomeComponent() {
             <FoldHeadActions>
               <Button
                 forwardedAs={Link}
-                to="/stories" //@TODO: THIS NEEDS TO BE REPLACED
+                to="/stories"
                 size="medium"
                 radius="square"
                 variation="primary-fill"
@@ -178,7 +181,7 @@ export default function HomeComponent() {
               <p>
                 Earth.gov is also the gateway to other interagency cooperative
                 efforts for our planet, like the{" "}
-                <ExpandLink to={`https://ghg.center/`}>
+                <ExpandLink as="a" href="https://earth.gov/ghgcenter">
                   {" "}
                   U.S. Greenhouse Gas Center
                 </ExpandLink>
@@ -196,7 +199,7 @@ export default function HomeComponent() {
                   </span>
                   <Button
                     forwardedAs="a"
-                    href="https://hub.ghg.center/hub/" //@TODO: This isn't working with external link
+                    href="https://earth.gov/ghgcenter"
                     size="medium"
                     radius="square"
                     variation="primary-fill"
@@ -216,12 +219,14 @@ export default function HomeComponent() {
               Joining forces <span>for a better tomorrow</span>
             </StyledVarHeading>
             <p>
-              The Earth Information Center is grateful for the support and expertise of our valued, multi-agency collaborators: EPA, FEMA, NASA, NOAA, USAID, USDA and USGS
+              The Earth Information Center is grateful for the support and
+              expertise of our valued, multi-agency collaborators: NASA, EPA, FEMA,
+              NOAA, USAID, USDA, and USGS.
             </p>
             <Partners size="small" />
             <Button
               forwardedAs="a"
-              href="https://ghg.center/" //@TODO: THIS NEEDS TO BE REPLACED
+              href="/about"
               size="medium"
               radius="square"
               variation="primary-fill"
