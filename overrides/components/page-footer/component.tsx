@@ -274,7 +274,7 @@ export default function PageFooter(props) {
               <li>
                 <FooterMenuLink
                   as="a"
-                  href="https://docs.google.com/forms/d/1mDgFqUsNv90Js7pERNDbmyN5RksztIy5ZZojWD0n5Pg"
+                  href="https://docs.google.com/forms/d/1mDgFqUsNv90Js7pERNDbmyN5RksztIy5ZZojWD0n5Pg/viewform"
                 >
                   Contact Us
                 </FooterMenuLink>
