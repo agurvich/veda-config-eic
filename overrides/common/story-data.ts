@@ -41,7 +41,7 @@ export const biodiversityStoryIds = [
 ];
 
 export const disastersStoryIds = [
-]
+];
 
 export const energyStoryIds = [
   "introduction_energy"
