@@ -46,6 +46,10 @@ layers:
         ::js ({ dateFns, datetime, compareDatetime }) => {
           if (dateFns && datetime && compareDatetime) return `${dateFns.format(datetime, 'LLL yyyy')} VS ${dateFns.format(compareDatetime, 'LLL yyyy')}`;
         }
+    analysis:
+      exclude: false
+      metrics:
+        - median
 ---
 
 <Block>
