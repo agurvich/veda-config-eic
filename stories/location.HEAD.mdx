@@ -32,4 +32,20 @@ taxonomy:
       - Space for Earth
 ---
 
-there 
+import { visitLocationFeaturesStoryIds } from '../overrides/common/story-data';
+import CardGallery from "./components/card_gallery";
+
+<Block type="wide">
+  <Figure>
+    <Embed
+      height="405"
+      src="https://www.youtube.com/embed/2nzAHdqu2QI"
+      title="A Virtual tour of the Earth Information Center"
+    />
+    <Caption>
+    </Caption>
+  </Figure>
+</Block>
+
+<CardGallery title={"Features"} storyIds={visitLocationFeaturesStoryIds} />
+
