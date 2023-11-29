@@ -3,9 +3,9 @@ import { NavLink } from "$veda-ui/react-router-dom";
 import styled from "$veda-ui/styled-components";
 import { glsp, themeVal } from "$veda-ui/@devseed-ui/theme-provider";
 import { CollecticonExpandTopRight } from "$veda-ui/@devseed-ui/collecticons";
-import { AccessibilityLinks } from "../../overrides/common/style";
+import { AccessibilityLink } from "../../overrides/common/style";
 
-const ExpandLinkCmp = styled(AccessibilityLinks)`
+const ExpandLinkCmp = styled(AccessibilityLink)`
   display: flex;
   align-items: center;
   gap: ${glsp(0.5)};
