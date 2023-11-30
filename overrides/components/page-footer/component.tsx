@@ -263,7 +263,7 @@ export default function PageFooter(props) {
                 </li>
               )}
               <li>
-                <FooterMenuLink to="/visit">Visit the center</FooterMenuLink>
+                <FooterMenuLink to="/visit">Visit a center</FooterMenuLink>
               </li>
               <li>
                 <FooterMenuLink to="/teach">Teach</FooterMenuLink>
