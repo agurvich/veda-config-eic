@@ -16,10 +16,9 @@ import { StyledVarHeading } from "../common/style";
 import { variableGlsp } from "$veda-ui-scripts/styles/variable-utils";
 import ThemeCards from "../components/theme-cards";
 import { themeLandingPageIds } from "../common/story-data";
-import { ExpandLink } from "./expand-link";
+import VisitGHG from "../components/visit-ghg";
 
 import Partners from "./partners";
-import RedEarthImg from "./media/earth-1.png";
 
 const IntroHeadline = styled(Hug)`
   display: flex;
@@ -67,46 +66,6 @@ const GradientWrapper = styled.div`
   );
 `;
 
-const BottomContent = styled(Hug)`
-display: flex;
-gap: ${glsp(2)};
-flex-flow: column;
-width: 82%;
-margin: auto;
-
-${media.mediumDown`
-    width: 100%
-`}
-`;
-
-const InfoImageContent = styled.div`
-  display: flex;
-  flex-flow: row;
-  background-color: #02225b; // @TODO: But where can I get this color?
-  color: #ffffff;
-  width: 100%;
-  height: 300px;
-  background-image: url(${RedEarthImg});
-  background-position: right bottom -50px;
-  background-repeat: no-repeat;
-  div {
-    display: flex;
-    flex-flow: column;
-    gap: ${glsp()};
-    padding-left: ${glsp(3)};
-    justify-content: center;
-  }
-
-  a {
-    width: 18.5rem;
-  }
-  grid-column: full-start / full-end;
-  ${media.largeUp`
-    grid-column: content-2 / content-12;
-    height: 350px;
-  `}
-`;
-
 const CollaboratorsContent = styled.div`
   display: flex;
   flex-flow: column;
@@ -146,40 +105,7 @@ export default function HomeComponent() {
             <Partners size="small" top={4} />
           </IntroHeadline>
         </HomeDescription>
-        <Fold>
-          <FoldBody>
-            <BottomContent>
-              <p>
-                Earth.gov is also the gateway to other interagency cooperative
-                efforts for our planet, like the{" "}
-                <ExpandLink as="a" href="https://earth.gov/ghgcenter">
-                  {" "}
-                  U.S. Greenhouse Gas Center
-                </ExpandLink>
-              </p>
-              <InfoImageContent>
-                <div>
-                  <StyledVarHeading size="small" as="h2">
-                    U.S. Greenhouse Gas Center
-                  </StyledVarHeading>
-                  <span>
-                    Uniting Data and Technology to Empower Tomorrow's Climate
-                    Solutions
-                  </span>
-                  <Button
-                    forwardedAs="a"
-                    href="https://earth.gov/ghgcenter"
-                    size="medium"
-                    radius="square"
-                    variation="primary-fill"
-                  >
-                    Visit the U.S. GHG Center website
-                  </Button>
-                </div>
-              </InfoImageContent>
-            </BottomContent>
-          </FoldBody>
-        </Fold>
+        <VisitGHG width="82%"/>
       </GradientWrapper>
         <Fold>
           <FoldHeader>

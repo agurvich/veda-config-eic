@@ -26,7 +26,9 @@ taxonomy:
 
 import CardGallery from "./components/card_gallery";
 import { greenhouseGasesStoryIds } from "../overrides/common/story-data";
+import VisitGHG from "../overrides/components/visit-ghg";
 
+<VisitGHG />
 <Block type='wide'>
   <Prose>
     ## Info
@@ -43,4 +45,7 @@ import { greenhouseGasesStoryIds } from "../overrides/common/story-data";
 
 </Block>
 
-<CardGallery title={"Greenhouse Gases Stories"} storyIds={greenhouseGasesStoryIds} />
+<CardGallery
+  title={"Greenhouse Gases Stories"}
+  storyIds={greenhouseGasesStoryIds}
+/>
