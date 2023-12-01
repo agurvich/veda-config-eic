@@ -48,7 +48,6 @@ const IntroHeadline = styled(Hug)`
 const HomeDescription = styled(Hug)`
   padding: ${variableGlsp(2.5, 0)};
   grid-row-gap: ${variableGlsp(2)};
-  background: ${themeVal("color.info-100")};
 
   ${media.mediumUp`
     grid-row-gap: ${variableGlsp(3)};
@@ -60,22 +59,25 @@ const IntroDesc = styled.div`
   `}
 `;
 
-const ContentContainer = styled.div`
-  background-image: linear-gradient(
-    ${themeVal("color.surface")} 0%,
-    ${themeVal("color.info-50")} 100%
-  );
-`;
-
 const GradientWrapper = styled.div`
   background-image: linear-gradient(
     ${themeVal("color.info-50")} 0%,
-    ${themeVal("color.info-100")} 60%,
-    ${themeVal("color.surface")} 60%
+    ${themeVal("color.info-100")} 75%,
+    ${themeVal("color.surface")} 75%
   );
 `;
 
-const BottomContent = styled(Hug)``;
+const BottomContent = styled(Hug)`
+display: flex;
+gap: ${glsp(2)};
+flex-flow: column;
+width: 82%;
+margin: auto;
+
+${media.mediumDown`
+    width: 100%
+`}
+`;
 
 const InfoImageContent = styled.div`
   display: flex;
@@ -110,6 +112,7 @@ const CollaboratorsContent = styled.div`
   flex-flow: column;
   align-items: center;
   gap: ${glsp()};
+  padding: 7rem;
 
   div {
     margin: 1rem auto;
@@ -122,62 +125,30 @@ const CollaboratorsContent = styled.div`
   p {
     text-align: center;
   }
-`;
-const HugP = styled(Hug)`
-  > p {
-    grid-column: full-start / full-end;
-    ${media.largeUp`
-      grid-column: content-2 / content-12;
-    `}
-  }
-`;
+`
 
 export default function HomeComponent() {
   const description =
     "The Earth Information Center consolidates data and insights on how Earth is changing from across the US federal government. Earth.gov is also the gateway to other interagency cooperative efforts for our planet, like the U.S. Greenhouse Gas Center.  Discover how these data are being used to prepare for climate change and mitigate, adapt and respond to environmental challenges across the country.  ";
   return (
     <>
-      <HomeDescription>
-        <IntroHeadline>
-          <IntroDesc>
-            <StyledVarHeading size="xlarge" as="h1">
-              One government
-              <br />
-              working for <span>one planet.</span>
-            </StyledVarHeading>
-            <p>{description}</p>
-          </IntroDesc>
-          <Partners size="small" top={4} />
-        </IntroHeadline>
-      </HomeDescription>
-      <ContentContainer>
-        <Fold>
-          <FoldHeader>
-            <FoldHeadline>
-              <StyledVarHeading as="h2" size="large">
-                Nine themes, one Earth
-              </StyledVarHeading>
-            </FoldHeadline>
-            <FoldHeadActions>
-              <Button
-                forwardedAs={Link}
-                to="/stories"
-                size="medium"
-                radius="square"
-                variation="primary-fill"
-              >
-                View all themes
-              </Button>
-            </FoldHeadActions>
-          </FoldHeader>
-
-          <ThemeCards storyIds={themeLandingPageIds} />
-        </Fold>
-      </ContentContainer>
       <GradientWrapper>
+        <HomeDescription>
+          <IntroHeadline>
+            <IntroDesc>
+              <StyledVarHeading size="xlarge" as="h1">
+                One government
+                <br />
+                working for <span>one planet.</span>
+              </StyledVarHeading>
+              <p>{description}</p>
+            </IntroDesc>
+            <Partners size="small" top={4} />
+          </IntroHeadline>
+        </HomeDescription>
         <Fold>
           <FoldBody>
-            <HugP>
+            <BottomContent>
               <p>
                 Earth.gov is also the gateway to other interagency cooperative
                 efforts for our planet, like the{" "}
@@ -186,8 +157,6 @@ export default function HomeComponent() {
                   U.S. Greenhouse Gas Center
                 </ExpandLink>
               </p>
-            </HugP>
-            <BottomContent>
               <InfoImageContent>
                 <div>
                   <StyledVarHeading size="small" as="h2">
@@ -212,6 +181,28 @@ export default function HomeComponent() {
           </FoldBody>
         </Fold>
       </GradientWrapper>
+        <Fold>
+          <FoldHeader>
+            <FoldHeadline>
+              <StyledVarHeading as="h2" size="large">
+                Nine themes, one Earth
+              </StyledVarHeading>
+            </FoldHeadline>
+            <FoldHeadActions>
+              <Button
+                forwardedAs={Link}
+                to="/stories"
+                size="medium"
+                radius="square"
+                variation="primary-fill"
+              >
+                View all themes
+              </Button>
+            </FoldHeadActions>
+          </FoldHeader>
+
+          <ThemeCards storyIds={themeLandingPageIds} />
+        </Fold>
       <Fold>
         <FoldBody>
           <CollaboratorsContent>
