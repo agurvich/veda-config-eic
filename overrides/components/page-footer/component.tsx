@@ -211,7 +211,7 @@ export default function PageFooter(props) {
     }]: []),
     {
       path: "/visit",
-      text: "Visit a center",
+      text: "Visit a Center",
     },
     {
       path: "/teach",
