@@ -23,6 +23,8 @@ import {
 } from "$veda-ui/@devseed-ui/theme-provider";
 
 import Embed from "$veda-ui-scripts/components/common/blocks/embed";
+import BrowserFrameComponent from "$veda-ui-scripts/styles/browser-frame";
+import Image from "$veda-ui-scripts/components/common/blocks/images";
 import { useMediaQuery } from "$veda-ui-scripts/utils/use-media-query";
 import { LoadingSkeleton } from "$veda-ui-scripts/components/common/loading-skeleton";
 // required CSS for pure-react-carousel
@@ -160,12 +162,10 @@ export default function Carousel({ items }: EmbeddedVideosPropType) {
                   aria-labelledby={`carousel-item-${idx}__label`}
                 >
                   <Slide index={idx}>
-                    <Embed
+                    <CarouselItem t={t}
                       height={height}
                       src={t.src}
                       title={t.title}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowfullscreen
                     />
                     <DescWrapper>
                       <h3>{t.title}</h3>
@@ -183,4 +183,26 @@ export default function Carousel({ items }: EmbeddedVideosPropType) {
       </CarouselProvider>
     </Lazyload>
   );
+}
+
+
+function CarouselItem({t,src,height,...params}){
+  if (t.src.includes('youtube')) return (
+    <Embed 
+      src={src}
+      height={height}
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+      {...params}
+    />
+  )
+  else return (
+    <BrowserFrameComponent width={"100%"}>
+        <Image
+          src={t.src}
+          height={height}
+          {...params}
+        />
+      </BrowserFrameComponent>
+  )
 }

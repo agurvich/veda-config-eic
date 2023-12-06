@@ -5,9 +5,9 @@ id: "immersive_earth"
 name: Space for Earth
 theme: true
 description: "
-  Space for Earth invites viewers to experience Earth as can only be seen from space — as an interconnected world, lacking boundaries or limits.
-  This immersive audio-visual installation invites visitors to explore Earth's changing vital signs. Observe, interact with, and become part of the data different federal agencies use to understand our changing planet.
-  Narrated by: Astronauts Nicole Stott and Andrew Feustel
+  Space for Earth is an immersive experience that invites viewers to experience Earth as can only be seen from space-- as an interconnected world, lacking boundaries or limits. 
+  This interactive and immersive audio-visual installation invites visitors to explore Earth's changing vital signs. 
+  Observe, interact with, and become part of the data different federal agencies use to understand our changing planet. 
 "
 media:
   src: ::file ./locfeature.IMMER/immersive_earth.png
@@ -25,10 +25,80 @@ taxonomy:
 ---
 
 import Carousel from "../overrides/common/embedded-video-carousel";
-import contentArray from './locfeature.IMMER/carousel_content.json';
+import contentArray from './locfeature.IMMER/carousel_content';
 
+import CardGallery from "./components/card_gallery";
+import { visitLocationFeaturesStoryIds } from '../overrides/common/story-data';
+
+<Block >
+    <Prose>
+      ### Visit Space for Earth
+      Space for Earth is on view at the Earth Information Center's location as NASA Headquarters in Washington DC. 
+      Admission is free.
+
+      ## Location & Hours
+      Mary W. Jackson NASA Headquarters East Lobby
+      300 E St. SW (East Lobby)
+      Washington, DC 20546
+      Monday - Friday
+      8:30am - 5:30pm
+    </Prose> 
+    <Figure>
+      <Image
+        src={new URL('./external_headers/hq_map.png', import.meta.url).href}
+        alt='rainbow colormap image of the hole in the ozone layer above the arctic.'
+      />
+    </Figure>
+</Block>
+
+
+<Block type='wide'>
+  <Prose>
+  ## Image Gallery
+  </Prose>
+</Block>
 <Block type='wide'>
   <Figure>
     <Carousel items={contentArray} />
   </Figure>
 </Block>
+
+<Block type="wide">
+  <Prose>
+  ## Data / Sources
+  Data and visualizations from Blue Marble, Black Marble, Eyes on The Earth, MERRA-2 re-analysis, Landsat 7, ASTER, and MODIS Normalized Difference Vegetation Index (NDVI).
+
+
+  Narrated by NASA Astronaut Dr. Andrew J. Feustel and retired NASA Astronaut Nicole Stott.
+  </Prose>
+</Block>
+
+<Block type="wide">
+  <Prose>
+  ## EIC Virtual Tour
+  </Prose>
+</Block>
+
+<Block type="wide">
+  <Figure>
+    <Embed
+      src="https://www.youtube.com/embed/2nzAHdqu2QI"
+      title="A Virtual tour of the Earth Information Center"
+    />
+  </Figure>
+</Block>
+
+<Block type="wide">
+  <Prose>
+    NASA satellites provide data on Earth's land, ecosystems, water, air, temperature, and climate-- and have done so for more than 50 years. 
+    Earth information from space supports decision makers, partners, and people in developing the tools needed to mitigate, adapt, and respond to our changing planet. 
+    At the Earth Information Center, visitors can see how our planet is
+
+
+    changing in areas that affect lives and livelihoods-- from temperatures in our cities to sea level rise, greenhouse gas emissions to agricultural productivity. 
+    The center showcases large, awe-inspiring visualizations, as well as interactive media, stories and narratives, to show how viewing Earth from space can improve lives in the face of disasters, environmental challenges, and climate change. 
+  </Prose>
+</Block>
+
+
+<CardGallery title={"Features"} storyIds={visitLocationFeaturesStoryIds} />
