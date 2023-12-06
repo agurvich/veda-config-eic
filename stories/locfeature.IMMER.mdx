@@ -32,7 +32,7 @@ import { visitLocationFeaturesStoryIds } from '../overrides/common/story-data';
 
 <Block >
     <Prose>
-      ### Visit Space for Earth
+      ## Visit Space for Earth
       Space for Earth is on view at the Earth Information Center's location as NASA Headquarters in Washington DC. 
       Admission is free.
 
@@ -51,17 +51,117 @@ import { visitLocationFeaturesStoryIds } from '../overrides/common/story-data';
     </Figure>
 </Block>
 
-
-<Block type='wide'>
+<Block type="wide">
   <Prose>
-  ## Image Gallery
+  ## The Experience
   </Prose>
 </Block>
-<Block type='wide'>
-  <Figure>
-    <Carousel items={contentArray} />
-  </Figure>
+
+<Block >
+    <Prose>
+      #### Overview
+      Space for Earth is a 12' x 12' x 12' immersive cube with projections on 3 walls and the floor providing a unique chance for viewers to perceive Earth from space, be immersed in NASA's Earth data and experience an interconnected and boundless world.
+      This immersive installation uses real-time NASA satellite data, encouraging active engagement with Earth's transformations.
+
+      Narrated by NASA Astronaut Dr. Andrew J. Feustel and retired NASA Astronaut Nicole Stott, the installation incorporates data from various sources, including blue Marble, Black Marble, Eyes on the Earth, MERRA-2 re-analysis, Landsat 7, ASTER, and MODIS NDVI. 
+
+      Space For Earth is a 7 minute interactive story divided into the following chapters:
+    </Prose> 
+    <Figure>
+      <Image
+        src={new URL('./external_headers/hq_map.png', import.meta.url).href}
+        alt='rainbow colormap image of the hole in the ozone layer above the arctic.'
+      />
+    </Figure>
 </Block>
+
+<Block >
+    <Prose>
+      #### The Blue Marble:
+      Immerse in the transformative 'overview effect' of the Blue Marble through NASA's BMNG images, revealing the ever-changing planet. 
+      Visualizations depict seasonal land surface changes, fostering a profound understanding of Earth's dynamic nature.
+    </Prose> 
+    <Figure>
+      <Image
+        src={new URL('./external_headers/hq_map.png', import.meta.url).href}
+        alt='rainbow colormap image of the hole in the ozone layer above the arctic.'
+      />
+    </Figure>
+</Block>
+
+<Block >
+    <Prose>
+      #### Eyes on the Earth:
+      Explore the density and sophistication of NASA's orbiting satellites, sourced in real-time from the Eyes on the Earth Web API product. 
+      Satellite motion paths are rendered with a 24-hour delay, providing a visually compelling exploration of their orbital activities.
+    </Prose> 
+    <Figure>
+      <Image
+        src={new URL('./external_headers/hq_map.png', import.meta.url).href}
+        alt='rainbow colormap image of the hole in the ozone layer above the arctic.'
+      />
+    </Figure>
+</Block>
+
+<Block >
+    <Prose>
+      #### Earth is Breathing:
+      Experience the living Earth concept through the Earth's Vitals exhibit, highlighting breathing biomimicry. 
+      This includes seasonal polar ice changes and chlorophyll dynamics, offering insight into Earth's vital signs and the interconnected dance of life.
+    </Prose> 
+    <Figure>
+      <Image
+        src={new URL('./external_headers/hq_map.png', import.meta.url).href}
+        alt='rainbow colormap image of the hole in the ozone layer above the arctic.'
+      />
+    </Figure>
+</Block>
+
+<Block >
+    <Prose>
+      #### Earth Vital Signs:
+      Forge connections between human body systems and Earth systems, noting parallels like fluvial river pathways and wind currents. 
+      The immersive experience features Landsat 7/8, MODIS, and ASTER image data, showcasing Earth's intricate beauty and interconnected systems.
+
+    </Prose> 
+    <Figure>
+      <Image
+        src={new URL('./external_headers/hq_map.png', import.meta.url).href}
+        alt='rainbow colormap image of the hole in the ozone layer above the arctic.'
+      />
+    </Figure>
+</Block>
+
+<Block >
+    <Prose>
+      #### Atmospheric River:
+      Engage in the exploration of Atmospheric Rivers, Humidity density and global wind currents with the form derived from MERRA-2 data focusing on humidity density around Hawaii. 
+      This interactive sequence enables users to "feel" the data, enhancing their understanding of Earth's climatic phenomena.
+
+    </Prose> 
+    <Figure>
+      <Image
+        src={new URL('./external_headers/hq_map.png', import.meta.url).href}
+        alt='rainbow colormap image of the hole in the ozone layer above the arctic.'
+      />
+    </Figure>
+</Block>
+
+<Block >
+    <Prose>
+      #### Outro / Black Marble:
+      Embark on a captivating journey through Earth's nighttime overview, interacting with the illuminated eastern seaboard of the US through gestures and movements. 
+      Silhouettes are playfully mirrored, emphasizing the profound connection shared in our interconnected world.
+
+    </Prose> 
+    <Figure>
+      <Image
+        src={new URL('./external_headers/hq_map.png', import.meta.url).href}
+        alt='rainbow colormap image of the hole in the ozone layer above the arctic.'
+      />
+    </Figure>
+</Block>
+
 
 <Block type="wide">
   <Prose>
