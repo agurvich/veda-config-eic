@@ -1,4 +1,4 @@
-export default contentArray = [
+const contentArray = [
     {
         "src":"https://www.youtube.com/embed/rzrUbVrmzMc",
         "title":"Global Biosphere March 2017 - Feb 2022",
@@ -14,3 +14,5 @@ export default contentArray = [
         "caption":"Visitors engage in a captivating exploration of atmospheric phenomena, including the formation of Atmospheric Rivers, insights into humidity density around Hawaii derived from MERRA-2 data and the intricate patterns of global wind currents. The interactive nature of the sequence enables users to physically immerse themselves in the datasets, providing a tangible and sensory experience of the complex atmospheric processes.",
     }
 ]
+
+export default contentArray;
